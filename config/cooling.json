@@ -1,0 +1,60 @@
+{
+    "soc": {
+        "pwm_min": 40,
+        "pwm_max": 100,
+        "temp_base": 20,
+        "temp_max": 40
+    },
+    "silent": {
+        "cpu": {
+            "pwm_min": 30,
+            "pwm_max": 60,
+            "temp_base": 20,
+            "temp_max": 35
+        },
+        "gpu": {
+            "pwm_min": 30,
+            "pwm_max": 60,
+            "temp_base": 20,
+            "temp_max": 35
+        },
+        "case": {
+            "pwm_min": 30,
+            "pwm_max": 60,
+            "temp_base": 20,
+            "temp_max": 35
+        },
+        "pump_1": {
+            "pwm": 80
+        },
+        "pump_2": {
+            "pwm": 80
+        }
+    },
+    "performance": {
+        "cpu": {
+            "pwm_min": 60,
+            "pwm_max": 90,
+            "temp_base": 20,
+            "temp_max": 30
+        },
+        "gpu": {
+            "pwm_min": 60,
+            "pwm_max": 90,
+            "temp_base": 20,
+            "temp_max": 30
+        },
+        "case": {
+            "pwm_min": 60,
+            "pwm_max": 90,
+            "temp_base": 20,
+            "temp_max": 30
+        },
+        "pump_1": {
+            "pwm": 100
+        },
+        "pump_2": {
+            "pwm": 100
+        }
+    }
+}

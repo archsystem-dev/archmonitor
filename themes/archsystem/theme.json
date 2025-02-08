@@ -1,0 +1,236 @@
+{
+    "name": "archsystem",
+    "global": {
+        "background_color": "#000000",
+        "pwm_steps": 20,
+        "pwm_steps_orientation": "left_to_right"
+    },
+    "images": {
+        "logo": "logo.png",
+        "background": "background.png",
+        "standby_off": "standby_off.png",
+        "standby_on": "standby_on.png",
+        "argb_a_off": "led_a_off.png",
+        "argb_a_on": "led_a_on.png",
+        "argb_b_off": "led_b_off.png",
+        "argb_b_on": "led_b_on.png",
+        "argb_c_off": "led_c_off.png",
+        "argb_c_on": "led_c_on.png",
+        "argb_d_off": "led_d_off.png",
+        "argb_d_on": "led_d_on.png",
+        "argb_e_off": "led_e_off.png",
+        "argb_e_on": "led_e_on.png",
+        "argb_f_off": "led_f_off.png",
+        "argb_f_on": "led_f_on.png",
+        "mode_silent_off": "silent_off.png",
+        "mode_silent_on": "silent_on.png",
+        "mode_performance_off": "performance_off.png",
+        "mode_performance_on": "performance_on.png",
+        "pwm_step_1_off": "echelon_off_1.png",
+        "pwm_step_1_on": "echelon_on_1.png",
+        "pwm_step_2_off": "echelon_off_2.png",
+        "pwm_step_2_on": "echelon_on_2.png",
+        "pwm_step_3_off": "echelon_off_3.png",
+        "pwm_step_3_on": "echelon_on_3.png",
+        "pwm_step_4_off": "echelon_off_4.png",
+        "pwm_step_4_on": "echelon_on_4.png",
+        "pwm_step_5_off": "echelon_off_5.png",
+        "pwm_step_5_on": "echelon_on_5.png",
+        "pwm_step_6_off": "echelon_off_6.png",
+        "pwm_step_6_on": "echelon_on_6.png",
+        "pwm_step_7_off": "echelon_off_7.png",
+        "pwm_step_7_on": "echelon_on_7.png",
+        "pwm_step_8_off": "echelon_off_8.png",
+        "pwm_step_8_on": "echelon_on_8.png",
+        "pwm_step_9_off": "echelon_off_9.png",
+        "pwm_step_9_on": "echelon_on_9.png",
+        "pwm_step_10_off": "echelon_off_10.png",
+        "pwm_step_10_on": "echelon_on_10.png",
+        "pwm_step_11_off": "echelon_off_11.png",
+        "pwm_step_11_on": "echelon_on_11.png",
+        "pwm_step_12_off": "echelon_off_12.png",
+        "pwm_step_12_on": "echelon_on_12.png",
+        "pwm_step_13_off": "echelon_off_13.png",
+        "pwm_step_13_on": "echelon_on_13.png",
+        "pwm_step_14_off": "echelon_off_14.png",
+        "pwm_step_14_on": "echelon_on_14.png",
+        "pwm_step_15_off": "echelon_off_15.png",
+        "pwm_step_15_on": "echelon_on_15.png",
+        "pwm_step_16_off": "echelon_off_16.png",
+        "pwm_step_16_on": "echelon_on_16.png",
+        "pwm_step_17_off": "echelon_off_17.png",
+        "pwm_step_17_on": "echelon_on_17.png",
+        "pwm_step_18_off": "echelon_off_18.png",
+        "pwm_step_18_on": "echelon_on_18.png",
+        "pwm_step_19_off": "echelon_off_19.png",
+        "pwm_step_19_on": "echelon_on_19.png",
+        "pwm_step_20_off": "echelon_off_20.png",
+        "pwm_step_20_on": "echelon_on_20.png"
+    },
+    "argb": {
+        "a": {
+            "x": 17,
+            "y": 21
+        },
+        "b": {
+            "x": 87,
+            "y": 21
+        },
+        "c": {
+            "x": 157,
+            "y": 21
+        },
+        "d": {
+            "x": 227,
+            "y": 21
+        },
+        "e": {
+            "x": 297,
+            "y": 21
+        },
+        "f": {
+            "x": 367,
+            "y": 21
+        }
+    },
+    "mode": {
+        "silent": {
+            "x": 458,
+            "y": 21
+        },
+        "performance": {
+            "x": 577,
+            "y": 21
+        }
+    },
+    "pwm": {
+        "soc": {
+            "x": 150,
+            "y": 106
+        },
+        "cpu": {
+            "x": 150,
+            "y": 172
+        },
+        "gpu": {
+            "x": 150,
+            "y": 213
+        },
+        "case": {
+            "x": 150,
+            "y": 256
+        },
+        "pump_1": {
+            "x": 150,
+            "y": 323
+        },
+        "pump_2": {
+            "x": 150,
+            "y": 364
+        }
+    },
+    "rpm": {
+        "soc": {
+            "x": 634,
+            "y": 112,
+            "w": 60,
+            "h": 22,
+            "f": "font.ttf",
+            "bgc": "#1e1e1e",
+            "c": "#ffffff",
+            "s": 20
+        },
+        "cpu": {
+            "x": 634,
+            "y": 174,
+            "w": 60,
+            "h": 22,
+            "f": "font.ttf",
+            "bgc": "#1e1e1e",
+            "c": "#ffffff",
+            "s": 20
+        },
+        "gpu": {
+            "x": 634,
+            "y": 217,
+            "w": 60,
+            "h": 22,
+            "f": "font.ttf",
+            "bgc": "#1e1e1e",
+            "c": "#ffffff",
+            "s": 20
+        },
+        "case": {
+            "x": 634,
+            "y": 262,
+            "w": 60,
+            "h": 22,
+            "f": "font.ttf",
+            "bgc": "#1e1e1e",
+            "c": "#ffffff",
+            "s": 20
+        },
+        "pump_1": {
+            "x": 634,
+            "y": 326,
+            "w": 60,
+            "h": 22,
+            "f": "font.ttf",
+            "bgc": "#1e1e1e",
+            "c": "#ffffff",
+            "s": 20
+        },
+        "pump_2": {
+            "x": 634,
+            "y": 368,
+            "w": 60,
+            "h": 22,
+            "f": "font.ttf",
+            "bgc": "#1e1e1e",
+            "c": "#ffffff",
+            "s": 20
+        }
+    },
+    "temp": {
+        "soc": {
+            "x": 144,
+            "y": 430,
+            "w": 40,
+            "h": 22,
+            "f": "font.ttf",
+            "bgc": "#262626",
+            "c": "#ffffff",
+            "s": 20
+        },
+        "cpu": {
+            "x": 342,
+            "y": 430,
+            "w": 40,
+            "h": 22,
+            "f": "font.ttf",
+            "bgc": "#262626",
+            "c": "#ffffff",
+            "s": 20
+        },
+        "gpu": {
+            "x": 542,
+            "y": 430,
+            "w": 40,
+            "h": 22,
+            "f": "font.ttf",
+            "bgc": "#262626",
+            "c": "#ffffff",
+            "s": 20
+        },
+        "case": {
+            "x": 740,
+            "y": 430,
+            "w": 40,
+            "h": 22,
+            "f": "font.ttf",
+            "bgc": "#262626",
+            "c": "#ffffff",
+            "s": 20
+        }
+    }
+}

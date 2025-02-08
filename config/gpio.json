@@ -1,0 +1,31 @@
+{
+    "sensor_1": "28-7f79541f64ff",
+    "sensor_2": "28-837e541f64ff",
+    "sensor_3": "28-d97b541f64ff",
+    "sensors": {
+        "1": "cpu",
+        "2": "gpu",
+        "3": "case"
+    },
+    "pin": {
+        "power": 26,
+        "start": 24,
+        "pwm_lock": 23,
+        "tach": {
+            "soc": 13,
+            "cpu": 6,
+            "gpu": 22,
+            "case": 5,
+            "pump_1": 27,
+            "pump_2": 17
+        },
+        "pca": {
+            "soc": 5,
+            "cpu": 0,
+            "gpu": 1,
+            "case": 2,
+            "pump_1": 3,
+            "pump_2": 4
+        }
+    }
+}

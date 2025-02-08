@@ -1,0 +1,17 @@
+{
+    "parameters": {
+        "location_x": "50%",
+        "location_y": "50%",
+        "width": 800,
+        "height": 480
+    },
+    "items": [[
+        [{"t": "column", "k": "col", "p": [[0, 0], [0, 0]], "bgc": "#000000", "sc": false, "scvo": false}, [
+            [
+                [{"t": "graph", "k": "graph_startup", "p": [[0, 0], [0, 0]], "s": [800, 480], "bgc": "#000000"}],
+                [{"t": "graph", "k": "graph_monitor", "p": [[0, 0], [0, 0]], "s": [800, 480], "bgc": "#000000"}],
+                [{"t": "graph", "k": "graph_standby", "p": [[0, 0], [0, 0]], "s": [800, 480], "bgc": "#000000"}]
+            ]
+        ]]
+    ]]
+}

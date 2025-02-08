@@ -1,0 +1,1374 @@
+{
+   "parameters": {
+       "location_x": "50%",
+       "location_y": "50%",
+       "width": 1430,
+       "height": 810
+    },
+   "items": [[
+        [{"t": "column", "p": [[20, 0], [0, 0]], "s":[550, 770]}, [
+            [
+                [{"t": "tab_group", "p": [[0, 0], [0, 0]], "s":[525, 740]}, [
+                    [
+                        [{"t": "tab", "v": " General "},[
+                            [
+                                [{"t": "column", "p": [[4, 0], [0, 0]], "s":[525, 730]}, [
+                                    [
+                                        [{"t": "frame", "s":[495, 70], "p": [[10, 10], [10, 10]], "v": " General Parameters "}, [
+                                            [
+                                                [{"t": "label", "v": "Theme :",                       "s": [16, 1], "p": [[10, 0], [10, 10]]}],
+                                                [{"t": "in_combo", "k": "parameters_theme",           "s": [28, 1], "p": [[10, 12], [10, 10]]}]
+                                            ]
+                                        ]]
+                                    ],
+                                    [
+                                        [{"t": "frame", "s":[495, 97], "p": [[10, 10], [10, 10]], "v": " Default Parameters "}, [
+                                            [
+                                                [{"t": "label", "v": "Cooling Mode :",                "s": [16, 1], "p": [[10, 0], [10, 2]]}],
+                                                [{"t": "in_combo", "k": "parameters_mode",            "s": [28, 1], "p": [[10, 12], [10, 2]]}]
+                                            ],
+                                            [
+                                                [{"t": "label", "v": "ARGB Mode :",                   "s": [16, 1], "p": [[10, 0], [0, 10]]}],
+                                                [{"t": "in_combo", "k": "parameters_argb",            "s": [28, 1], "p": [[10, 12], [0, 10]]}]
+                                            ]
+                                        ]]
+                                    ]
+                                ]]
+                            ]
+                        ]]
+                    ],
+                    [
+                        [{"t": "tab", "v": " Theme "},[
+                            [
+                                [{"t": "column", "p": [[4, 0], [0, 0]], "s":[525, 730]}, [
+                                    [
+                                        [{"t": "frame", "s":[495, 70], "p": [[10, 10], [10, 10]], "v": " Theme Loading "}, [
+                                            [
+                                                [{"t": "label",    "v": "Theme :",       "s": [7, 1],   "p": [[10, 0], [10, 10]]}],
+                                                [{"t": "in_combo", "k": "theme_select",  "s": [20, 1],  "p": [[106, 0], [10, 10]]}],
+                                                [{"t": "button",   "k": "theme_load",    "s": [6, 1],   "p": [[5, 10], [10, 10]], "v": "Load"}]
+                                            ]
+                                        ]]
+                                    ],
+                                    [
+                                        [{"t": "frame", "s":[495, 124], "p": [[10, 10], [10, 10]], "v": " Theme Parameters "}, [
+                                            [
+                                                [{"t": "label",                                        "v": "Background Color :",  "s": [30, 1], "p": [[10, 8], [10, 2]]}],
+                                                [{"t": "in_line",      "k": "theme_background_color",                              "s": [8, 1],  "p": [[4, 0], [10, 2]]}],
+                                                [{"t": "button_color", "tg": "theme_background_color", "v": "Color",               "s": [6, 1],  "p": [[5, 10], [10, 2]]}]
+                                            ],
+                                            [
+                                                [{"t": "label", "v": "PWM steps Number :", "s": [23, 1], "p": [[10, 0], [0, 2]]}],
+                                                [{"t": "in_combo", "k": "theme_pwm_steps", "s": [20, 1],  "p": [[18, 10], [0, 2]]}]
+                                            ],
+                                            [
+                                                [{"t": "label", "v": "PWM steps Orientation :",  "s": [23, 1], "p": [[10, 0], [0, 10]]}],
+                                                [{"t": "in_combo", "k": "theme_pwm_steps_orientation", "s": [20, 1],  "p": [[18, 10], [0, 10]]}]
+                                            ]
+                                        ]]
+                                    ],
+                                    [
+                                        [{"t": "tab_group", "k": "tab_group_theme_select", "s":[493, 372], "p": [[10, 10], [10, 10]]}, [
+                                            [
+                                                [{"t": "tab", "k": "tab_theme_images", "v": " Images "},[
+                                                    [
+                                                        [{"t": "column", "k": "col_theme_images", "p": [[0, 0], [0, 0]], "s":[480, 372], "sc": true, "scvo": true}, [
+                                                            [
+                                                                [{"t": "label", "v": "Logo :",                                   "s": [17, 1], "p": [[10, 0], [15, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_logo", "ro": true,                 "s": [19, 1], "p": [[10, 0], [15, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                             "s": [6, 1],  "p": [[5, 10], [15, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Background :",                             "s": [17, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_background", "ro": true,           "s": [19, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "button_file", "v": "Select",                             "s": [6, 1],  "p": [[5, 10], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Start OFF :",                              "s": [17, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_standby_off", "ro": true,            "s": [19, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                             "s": [6, 1],  "p": [[5, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Start ON :",                               "s": [17, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_standby_on", "ro": true,             "s": [19, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "button_file", "v": "Select",                             "s": [6, 1],  "p": [[5, 10], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "ARGB A OFF :",                              "s": [17, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_argb_a_off", "ro": true,            "s": [19, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                              "s": [6, 1],  "p": [[5, 10], [0, 2]]}]],
+                                                            [
+                                                                [{"t": "label", "v": "ARGB A ON :",                               "s": [17, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_argb_a_on", "ro": true,             "s": [19, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "button_file", "v": "Select",                              "s": [6, 1],  "p": [[5, 10], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "ARGB B OFF :",                              "s": [17, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_argb_b_off", "ro": true,            "s": [19, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                              "s": [6, 1],  "p": [[5, 10], [0, 2]]}]],
+                                                            [
+                                                                [{"t": "label", "v": "ARGB B ON :",                               "s": [17, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_argb_b_on", "ro": true,             "s": [19, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "button_file", "v": "Select",                              "s": [6, 1],  "p": [[5, 10], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "ARGB C OFF :",                              "s": [17, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_argb_c_off", "ro": true,            "s": [19, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                              "s": [6, 1],  "p": [[5, 10], [0, 2]]}]],
+                                                            [
+                                                                [{"t": "label", "v": "ARGB C ON :",                               "s": [17, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_argb_c_on", "ro": true,             "s": [19, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "button_file", "v": "Select",                              "s": [6, 1],  "p": [[5, 10], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "ARGB D OFF :",                              "s": [17, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_argb_d_off", "ro": true,            "s": [19, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                              "s": [6, 1],  "p": [[5, 10], [0, 2]]}]],
+                                                            [
+                                                                [{"t": "label", "v": "ARGB D ON :",                               "s": [17, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_argb_d_on", "ro": true,             "s": [19, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "button_file", "v": "Select",                              "s": [6, 1],  "p": [[5, 10], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "ARGB E OFF :",                              "s": [17, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_argb_e_off", "ro": true,            "s": [19, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                              "s": [6, 1],  "p": [[5, 10], [0, 2]]}]],
+                                                            [
+                                                                [{"t": "label", "v": "ARGB E ON :",                               "s": [17, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_argb_e_on", "ro": true,             "s": [19, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "button_file", "v": "Select",                              "s": [6, 1],  "p": [[5, 10], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "ARGB F OFF :",                              "s": [17, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_argb_f_off", "ro": true,            "s": [19, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                              "s": [6, 1],  "p": [[5, 10], [0, 2]]}]],
+                                                            [
+                                                                [{"t": "label", "v": "ARGB F ON :",                               "s": [17, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_argb_f_on", "ro": true,             "s": [19, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "button_file", "v": "Select",                              "s": [6, 1],  "p": [[5, 10], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Mode Silent OFF :",                         "s": [17, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_mode_silent_off", "ro": true,       "s": [19, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                              "s": [6, 1],  "p": [[5, 10], [0, 2]]}]],
+                                                            [
+                                                                [{"t": "label", "v": "Mode Silent ON :",                          "s": [17, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_mode_silent_on", "ro": true,        "s": [19, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "button_file", "v": "Select",                              "s": [6, 1],  "p": [[5, 10], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Mode Perf OFF :",                           "s": [17, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_mode_performance_off", "ro": true,  "s": [19, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                              "s": [6, 1],  "p": [[5, 10], [0, 2]]}]],
+                                                            [
+                                                                [{"t": "label", "v": "Mode Perf ON :",                            "s": [17, 1], "p": [[10, 0], [0, 10]]}],
+                                                                [{"t": "in_line", "k": "theme_mode_performance_on", "ro": true,   "s": [19, 1], "p": [[10, 0], [0, 10]]}],
+                                                                [{"t": "button_file", "v": "Select",                              "s": [6, 1],  "p": [[5, 10], [0, 10]]}]
+                                                            ]
+                                                        ]]
+                                                    ]
+                                                ]]
+                                            ],
+                                            [
+                                                [{"t": "tab", "k": "tab_theme_pwm_steps_10", "v": " Steps 10 "},[
+                                                    [
+                                                        [{"t": "column", "p": [[0, 0], [0, 0]], "s":[480, 372], "sc": true, "scvo": true}, [
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 01 OFF :",                  "s": [17, 1], "p": [[10, 0], [15, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_1_off", "ro": true, "s": [19, 1], "p": [[10, 0], [15, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                       "s": [6, 1],  "p": [[5, 10], [15, 2]]}]],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 01 ON :",                   "s": [17, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_1_on", "ro": true,  "s": [19, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "button_file", "v": "Select",                       "s": [6, 1],  "p": [[5, 10], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 02 OFF :",                  "s": [17, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_2_off", "ro": true, "s": [19, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                       "s": [6, 1],  "p": [[5, 10], [0, 2]]}]],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 02 ON :",                   "s": [17, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_2_on", "ro": true,  "s": [19, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "button_file", "v": "Select",                       "s": [6, 1],  "p": [[5, 10], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 03 OFF :",                  "s": [17, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_3_off", "ro": true, "s": [19, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                       "s": [6, 1],  "p": [[5, 10], [0, 2]]}]],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 03 ON :",                   "s": [17, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_3_on", "ro": true,  "s": [19, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "button_file", "v": "Select",                       "s": [6, 1],  "p": [[5, 10], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 04 OFF :",                  "s": [17, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_4_off", "ro": true, "s": [19, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                       "s": [6, 1],  "p": [[5, 10], [0, 2]]}]],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 04 ON :",                   "s": [17, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_4_on", "ro": true,  "s": [19, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "button_file", "v": "Select",                       "s": [6, 1],  "p": [[5, 10], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 05 OFF :",                  "s": [17, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_5_off", "ro": true, "s": [19, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                       "s": [6, 1],  "p": [[5, 10], [0, 2]]}]],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 05 ON :",                   "s": [17, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_5_on", "ro": true,  "s": [19, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "button_file", "v": "Select",                       "s": [6, 1],  "p": [[5, 10], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 06 OFF :",                  "s": [17, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_6_off", "ro": true, "s": [19, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                       "s": [6, 1],  "p": [[5, 10], [0, 2]]}]],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 06 ON :",                   "s": [17, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_6_on", "ro": true,  "s": [19, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "button_file", "v": "Select",                       "s": [6, 1],  "p": [[5, 10], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 07 OFF :",                  "s": [17, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_7_off", "ro": true, "s": [19, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                       "s": [6, 1],  "p": [[5, 10], [0, 2]]}]],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 07 ON :",                   "s": [17, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_7_on", "ro": true,  "s": [19, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "button_file", "v": "Select",                       "s": [6, 1],  "p": [[5, 10], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 08 OFF :",                  "s": [17, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_8_off", "ro": true, "s": [19, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                       "s": [6, 1],  "p": [[5, 10], [0, 2]]}]],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 08 ON :",                   "s": [17, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_8_on", "ro": true,  "s": [19, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "button_file", "v": "Select",                       "s": [6, 1],  "p": [[5, 10], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 09 OFF :",                  "s": [17, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_9_off", "ro": true, "s": [19, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                       "s": [6, 1],  "p": [[5, 10], [0, 2]]}]],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 09 ON :",                   "s": [17, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_9_on", "ro": true,  "s": [19, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "button_file", "v": "Select",                       "s": [6, 1],  "p": [[5, 10], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 10 OFF :",                   "s": [17, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_10_off", "ro": true, "s": [19, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                        "s": [6, 1],  "p": [[5, 10], [0, 2]]}]],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 10 ON :",                    "s": [17, 1], "p": [[10, 0], [0, 10]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_10_on", "ro": true,  "s": [19, 1], "p": [[10, 0], [0, 10]]}],
+                                                                [{"t": "button_file", "v": "Select",                        "s": [6, 1],  "p": [[5, 10], [0, 10]]}]
+                                                            ]
+                                                        ]]
+                                                    ]
+                                                ]]
+                                            ],
+                                            [
+                                                [{"t": "tab", "k": "tab_theme_pwm_steps_20", "v": " Steps 20 ", "vbl": false},[
+                                                    [
+                                                        [{"t": "column", "p": [[0, 0], [0, 0]], "s":[480, 372], "sc": true, "scvo": true}, [
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 11 OFF :",                   "s": [17, 1], "p": [[10, 0], [15, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_11_off", "ro": true, "s": [19, 1], "p": [[10, 0], [15, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                        "s": [6, 1],  "p": [[5, 10], [15, 2]]}]],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 11 ON :",                    "s": [17, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_11_on", "ro": true,  "s": [19, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "button_file", "v": "Select",                        "s": [6, 1],  "p": [[5, 10], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 12 OFF :",                   "s": [17, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_12_off", "ro": true, "s": [19, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                        "s": [6, 1],  "p": [[5, 10], [0, 2]]}]],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 12 ON :",                    "s": [17, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_12_on", "ro": true,  "s": [19, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "button_file", "v": "Select",                        "s": [6, 1],  "p": [[5, 10], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 13 OFF :",                   "s": [17, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_13_off", "ro": true, "s": [19, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                        "s": [6, 1],  "p": [[5, 10], [0, 2]]}]],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 13 ON :",                    "s": [17, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_13_on", "ro": true,  "s": [19, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "button_file", "v": "Select",                        "s": [6, 1],  "p": [[5, 10], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 14 OFF :",                   "s": [17, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_14_off", "ro": true, "s": [19, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                        "s": [6, 1],  "p": [[5, 10], [0, 2]]}]],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 14 ON :",                    "s": [17, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_14_on", "ro": true,  "s": [19, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "button_file", "v": "Select",                        "s": [6, 1],  "p": [[5, 10], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 15 OFF :",                   "s": [17, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_15_off", "ro": true, "s": [19, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                        "s": [6, 1],  "p": [[5, 10], [0, 2]]}]],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 15 ON :",                    "s": [17, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_15_on", "ro": true,  "s": [19, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "button_file", "v": "Select",                        "s": [6, 1],  "p": [[5, 10], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 16 OFF :",                   "s": [17, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_16_off", "ro": true, "s": [19, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                        "s": [6, 1],  "p": [[5, 10], [0, 2]]}]],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 16 ON :",                    "s": [17, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_16_on", "ro": true,  "s": [19, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "button_file", "v": "Select",                        "s": [6, 1],  "p": [[5, 10], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 17 OFF :",                   "s": [17, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_17_off", "ro": true, "s": [19, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                        "s": [6, 1],  "p": [[5, 10], [0, 2]]}]],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 17 ON :",                    "s": [17, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_17_on", "ro": true,  "s": [19, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "button_file", "v": "Select",                        "s": [6, 1],  "p": [[5, 10], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 18 OFF :",                   "s": [17, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_18_off", "ro": true, "s": [19, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                        "s": [6, 1],  "p": [[5, 10], [0, 2]]}]],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 18 ON :",                    "s": [17, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_18_on", "ro": true,  "s": [19, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "button_file", "v": "Select",                        "s": [6, 1],  "p": [[5, 10], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 19 OFF :",                   "s": [17, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_19_off", "ro": true, "s": [19, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                        "s": [6, 1],  "p": [[5, 10], [0, 2]]}]],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 19 ON :",                    "s": [17, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_19_on", "ro": true,  "s": [19, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "button_file", "v": "Select",                        "s": [6, 1],  "p": [[5, 10], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 20 OFF :",                   "s": [17, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_20_off", "ro": true, "s": [19, 1], "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                        "s": [6, 1],  "p": [[5, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Step 20 ON :",                    "s": [17, 1], "p": [[10, 0], [0, 10]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_step_20_on", "ro": true,  "s": [19, 1], "p": [[10, 0], [0, 10]]}],
+                                                                [{"t": "button_file", "v": "Select",                        "s": [6, 1],  "p": [[5, 10], [0, 10]]}]
+                                                            ]
+                                                        ]]
+                                                    ]
+                                                ]]
+                                            ],
+                                            [
+                                                [{"t": "tab", "k": "tab_theme_fonts", "v": " Fonts "},[
+                                                    [
+                                                        [{"t": "column", "k": "col_theme_fonts", "p": [[0, 0], [0, 0]], "s":[480, 372], "sc": true, "scvo": true}, [
+                                                            [
+                                                                [{"t": "label",       "v": "RPM SoC :",                    "s": [12, 1], "p": [[10, 0], [15, 2]]}],
+                                                                [{"t": "in_line",     "k": "theme_rpm_soc_f", "ro": true,  "s": [17, 1], "p": [[7, 0],  [15, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                       "s": [6, 1],  "p": [[5, 0],  [15, 2]]}],
+                                                                [{"t": "in_combo",    "k": "theme_rpm_soc_s",              "s": [5, 1],  "p": [[5, 28], [15, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",        "v": "",                                              "s": [12, 1], "p": [[10, 0],  [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "theme_rpm_soc_bgc", "ro": true,                 "s": [17, 1], "p": [[7, 0],   [0, 2]]}],
+                                                                [{"t": "button_color", "v": "BG",                "tg": "theme_rpm_soc_bgc",  "s": [6, 1],  "p": [[5,  100], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",        "v": "",                                              "s": [12, 1], "p": [[10, 0],  [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "theme_rpm_soc_c",   "ro": true,                 "s": [17, 1], "p": [[7, 0],   [0, 2]]}],
+                                                                [{"t": "button_color", "v": "Text",              "tg": "theme_rpm_soc_c",    "s": [6, 1],  "p": [[5,  100], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",   "v": "",                 "s": [12, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "label",   "v": "Width :",          "s": [8, 1],  "p": [[6, 0],  [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_rpm_soc_w",  "s": [6, 1],  "p": [[0, 4],  [0, 15]]}],
+                                                                [{"t": "label",   "v": "Height :",         "s": [8, 1],  "p": [[20, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_rpm_soc_h",  "s": [6, 1],  "p": [[0, 28], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",       "v": "RPM CPU :",                    "s": [12, 1], "p": [[10, 0], [15, 2]]}],
+                                                                [{"t": "in_line",     "k": "theme_rpm_cpu_f", "ro": true,  "s": [17, 1], "p": [[7, 0],  [15, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                       "s": [6, 1],  "p": [[5, 0],  [15, 2]]}],
+                                                                [{"t": "in_combo",    "k": "theme_rpm_cpu_s",              "s": [5, 1],  "p": [[5, 28], [15, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",        "v": "",                                              "s": [12, 1], "p": [[10, 0],  [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "theme_rpm_cpu_bgc", "ro": true,                 "s": [17, 1], "p": [[7, 0],   [0, 2]]}],
+                                                                [{"t": "button_color", "v": "BG",                "tg": "theme_rpm_cpu_bgc",  "s": [6, 1],  "p": [[5,  100], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",        "v": "",                                              "s": [12, 1], "p": [[10, 0],  [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "theme_rpm_cpu_c",   "ro": true,                 "s": [17, 1], "p": [[7, 0],   [0, 2]]}],
+                                                                [{"t": "button_color", "v": "Text",              "tg": "theme_rpm_cpu_c",    "s": [6, 1],  "p": [[5,  100], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",   "v": "",                 "s": [12, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "label",   "v": "Width :",          "s": [8, 1],  "p": [[6, 0],  [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_rpm_cpu_w",  "s": [6, 1],  "p": [[0, 4],  [0, 15]]}],
+                                                                [{"t": "label",   "v": "Height :",         "s": [8, 1],  "p": [[20, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_rpm_cpu_h",  "s": [6, 1],  "p": [[0, 28], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",       "v": "RPM GPU :",                    "s": [12, 1], "p": [[10, 0], [15, 2]]}],
+                                                                [{"t": "in_line",     "k": "theme_rpm_gpu_f", "ro": true,  "s": [17, 1], "p": [[7, 0],  [15, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                       "s": [6, 1],  "p": [[5, 0],  [15, 2]]}],
+                                                                [{"t": "in_combo",    "k": "theme_rpm_gpu_s",              "s": [5, 1],  "p": [[5, 28], [15, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",        "v": "",                                              "s": [12, 1], "p": [[10, 0],  [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "theme_rpm_gpu_bgc", "ro": true,                 "s": [17, 1], "p": [[7, 0],   [0, 2]]}],
+                                                                [{"t": "button_color", "v": "BG",                "tg": "theme_rpm_gpu_bgc",  "s": [6, 1],  "p": [[5,  100], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",        "v": "",                                              "s": [12, 1], "p": [[10, 0],  [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "theme_rpm_gpu_c",   "ro": true,                 "s": [17, 1], "p": [[7, 0],   [0, 2]]}],
+                                                                [{"t": "button_color", "v": "Text",              "tg": "theme_rpm_gpu_c",    "s": [6, 1],  "p": [[5,  100], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",   "v": "",                 "s": [12, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "label",   "v": "Width :",          "s": [8, 1],  "p": [[6, 0],  [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_rpm_gpu_w",  "s": [6, 1],  "p": [[0, 4],  [0, 15]]}],
+                                                                [{"t": "label",   "v": "Height :",         "s": [8, 1],  "p": [[20, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_rpm_gpu_h",  "s": [6, 1],  "p": [[0, 28], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",       "v": "RPM CASE :",                    "s": [12, 1], "p": [[10, 0], [15, 2]]}],
+                                                                [{"t": "in_line",     "k": "theme_rpm_case_f", "ro": true,  "s": [17, 1], "p": [[7, 0],  [15, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                        "s": [6, 1],  "p": [[5, 0],  [15, 2]]}],
+                                                                [{"t": "in_combo",    "k": "theme_rpm_case_s",              "s": [5, 1],  "p": [[5, 28], [15, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",        "v": "",                                                "s": [12, 1], "p": [[10, 0],  [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "theme_rpm_case_bgc", "ro": true,                  "s": [17, 1], "p": [[7, 0],   [0, 2]]}],
+                                                                [{"t": "button_color", "v": "BG",                 "tg": "theme_rpm_case_bgc", "s": [6, 1],  "p": [[5,  100], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",        "v": "",                                             "s": [12, 1], "p": [[10, 0],  [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "theme_rpm_case_c",   "ro": true,               "s": [17, 1], "p": [[7, 0],   [0, 2]]}],
+                                                                [{"t": "button_color", "v": "Text",               "tg": "theme_rpm_case_c", "s": [6, 1],  "p": [[5,  100], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",   "v": "",                  "s": [12, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "label",   "v": "Width :",           "s": [8, 1],  "p": [[6, 0],  [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_rpm_case_w",  "s": [6, 1],  "p": [[0, 4],  [0, 15]]}],
+                                                                [{"t": "label",   "v": "Height :",          "s": [8, 1],  "p": [[20, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_rpm_case_h",  "s": [6, 1],  "p": [[0, 28], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",       "v": "RPM PUMP 1 :",                    "s": [12, 1], "p": [[10, 0], [15, 2]]}],
+                                                                [{"t": "in_line",     "k": "theme_rpm_pump_1_f", "ro": true,  "s": [17, 1], "p": [[7, 0],  [15, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                          "s": [6, 1],  "p": [[5, 0],  [15, 2]]}],
+                                                                [{"t": "in_combo",    "k": "theme_rpm_pump_1_s",              "s": [5, 1],  "p": [[5, 28], [15, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",        "v": "",                                                   "s": [12, 1], "p": [[10, 0],  [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "theme_rpm_pump_1_bgc", "ro": true,                   "s": [17, 1], "p": [[7, 0],   [0, 2]]}],
+                                                                [{"t": "button_color", "v": "BG",                   "tg": "theme_rpm_pump_1_bgc", "s": [6, 1],  "p": [[5,  100], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",        "v": "",                                                 "s": [12, 1], "p": [[10, 0],  [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "theme_rpm_pump_1_c",   "ro": true,                 "s": [17, 1], "p": [[7, 0],   [0, 2]]}],
+                                                                [{"t": "button_color", "v": "Text",                 "tg": "theme_rpm_pump_1_c", "s": [6, 1],  "p": [[5,  100], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",   "v": "",                   "s": [12, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "label",   "v": "Width :",            "s": [8, 1],  "p": [[6, 0],  [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_rpm_pump_1_w", "s": [6, 1],  "p": [[0, 4],  [0, 15]]}],
+                                                                [{"t": "label",   "v": "Height :",           "s": [8, 1],  "p": [[20, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_rpm_pump_1_h", "s": [6, 1],  "p": [[0, 28], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",       "v": "RPM PUMP 2 :",                   "s": [12, 1], "p": [[10, 0], [15, 2]]}],
+                                                                [{"t": "in_line",     "k": "theme_rpm_pump_2_f", "ro": true, "s": [17, 1], "p": [[7, 0],  [15, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                         "s": [6, 1],  "p": [[5, 0],  [15, 2]]}],
+                                                                [{"t": "in_combo",    "k": "theme_rpm_pump_2_s",             "s": [5, 1],  "p": [[5, 28], [15, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",        "v": "",                                                   "s": [12, 1], "p": [[10, 0],  [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "theme_rpm_pump_2_bgc", "ro": true,                   "s": [17, 1], "p": [[7, 0],   [0, 2]]}],
+                                                                [{"t": "button_color", "v": "BG",                   "tg": "theme_rpm_pump_2_bgc", "s": [6, 1],  "p": [[5,  100], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",        "v": "",                                                "s": [12, 1], "p": [[10, 0],  [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "theme_rpm_pump_2_c",  "ro": true,                 "s": [17, 1], "p": [[7, 0],   [0, 2]]}],
+                                                                [{"t": "button_color", "v": "Text",                "tg": "theme_rpm_pump_2_c", "s": [6, 1],  "p": [[5,  100], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",   "v": "",                   "s": [12, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "label",   "v": "Width :",            "s": [8, 1],  "p": [[6, 0],  [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_rpm_pump_2_w", "s": [6, 1],  "p": [[0, 4],  [0, 15]]}],
+                                                                [{"t": "label",   "v": "Height :",           "s": [8, 1],  "p": [[20, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_rpm_pump_2_h", "s": [6, 1],  "p": [[0, 28], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",       "v": "TEMP SoC :",                    "s": [12, 1], "p": [[10, 0], [15, 2]]}],
+                                                                [{"t": "in_line",     "k": "theme_temp_soc_f", "ro": true,  "s": [17, 1], "p": [[7, 0],  [15, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                        "s": [6, 1],  "p": [[5, 0],  [15, 2]]}],
+                                                                [{"t": "in_combo",    "k": "theme_temp_soc_s",              "s": [5, 1],  "p": [[5, 28], [15, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",        "v": "",                                               "s": [12, 1], "p": [[10, 0],  [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "theme_temp_soc_bgc", "ro": true,                 "s": [17, 1], "p": [[7, 0],   [0, 2]]}],
+                                                                [{"t": "button_color", "v": "BG",                 "tg": "theme_temp_soc_bgc", "s": [6, 1],  "p": [[5,  100], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",        "v": "",                                             "s": [12, 1], "p": [[10, 0],  [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "theme_temp_soc_c",  "ro": true,                "s": [17, 1], "p": [[7, 0],   [0, 2]]}],
+                                                                [{"t": "button_color", "v": "Text",              "tg": "theme_temp_soc_c",  "s": [6, 1],  "p": [[5,  100], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",   "v": "",                  "s": [12, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "label",   "v": "Width :",           "s": [8, 1],  "p": [[6, 0],  [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_temp_soc_w",  "s": [6, 1],  "p": [[0, 4],  [0, 15]]}],
+                                                                [{"t": "label",   "v": "Height :",          "s": [8, 1],  "p": [[20, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_temp_soc_h",  "s": [6, 1],  "p": [[0, 28], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",       "v": "TEMP CPU :",                    "s": [12, 1], "p": [[10, 0], [15, 2]]}],
+                                                                [{"t": "in_line",     "k": "theme_temp_cpu_f", "ro": true,  "s": [17, 1], "p": [[7, 0],  [15, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                        "s": [6, 1],  "p": [[5, 0],  [15, 2]]}],
+                                                                [{"t": "in_combo",    "k": "theme_temp_cpu_s",              "s": [5, 1],  "p": [[5, 28], [15, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",        "v": "",                                               "s": [12, 1], "p": [[10, 0],  [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "theme_temp_cpu_bgc", "ro": true,                 "s": [17, 1], "p": [[7, 0],   [0, 2]]}],
+                                                                [{"t": "button_color", "v": "BG",                 "tg": "theme_temp_cpu_bgc", "s": [6, 1],  "p": [[5,  100], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",        "v": "",                                              "s": [12, 1], "p": [[10, 0],  [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "theme_temp_cpu_c",  "ro": true,                 "s": [17, 1], "p": [[7, 0],   [0, 2]]}],
+                                                                [{"t": "button_color", "v": "Text",              "tg": "theme_temp_cpu_c",   "s": [6, 1],  "p": [[5,  100], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",   "v": "",                  "s": [12, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "label",   "v": "Width :",           "s": [8, 1],  "p": [[6, 0],  [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_temp_cpu_w",  "s": [6, 1],  "p": [[0, 4],  [0, 15]]}],
+                                                                [{"t": "label",   "v": "Height :",          "s": [8, 1],  "p": [[20, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_temp_cpu_h",  "s": [6, 1],  "p": [[0, 28], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",       "v": "TEMP GPU :",                    "s": [12, 1], "p": [[10, 0], [15, 2]]}],
+                                                                [{"t": "in_line",     "k": "theme_temp_gpu_f", "ro": true,  "s": [17, 1], "p": [[7, 0],  [15, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                        "s": [6, 1],  "p": [[5, 0],  [15, 2]]}],
+                                                                [{"t": "in_combo",    "k": "theme_temp_gpu_s",              "s": [5, 1],  "p": [[5, 28], [15, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",        "v": "",                                               "s": [12, 1], "p": [[10, 0],  [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "theme_temp_gpu_bgc", "ro": true,                 "s": [17, 1], "p": [[7, 0],   [0, 2]]}],
+                                                                [{"t": "button_color", "v": "BG",                 "tg": "theme_temp_gpu_bgc", "s": [6, 1],  "p": [[5,  100], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",        "v": "",                                              "s": [12, 1], "p": [[10, 0],  [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "theme_temp_gpu_c",   "ro": true,                "s": [17, 1], "p": [[7, 0],   [0, 2]]}],
+                                                                [{"t": "button_color", "v": "Text",               "tg": "theme_temp_gpu_c",  "s": [6, 1],  "p": [[5,  100], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",   "v": "",                 "s": [12, 1], "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "label",   "v": "Width :",          "s": [8, 1],  "p": [[6, 0],  [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_temp_gpu_w", "s": [6, 1],  "p": [[0, 4],  [0, 15]]}],
+                                                                [{"t": "label",   "v": "Height :",         "s": [8, 1],  "p": [[20, 0], [0, 15]]}],
+                                                                [{"t": "in_line", "k": "theme_temp_gpu_h", "s": [6, 1],  "p": [[0, 28], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",       "v": "TEMP CASE :",                    "s": [12, 1], "p": [[10, 0], [15, 2]]}],
+                                                                [{"t": "in_line",     "k": "theme_temp_case_f", "ro": true,  "s": [17, 1], "p": [[7, 0],  [15, 2]]}],
+                                                                [{"t": "button_file", "v": "Select",                         "s": [6, 1],  "p": [[5, 0],  [15, 2]]}],
+                                                                [{"t": "in_combo",    "k": "theme_temp_case_s",              "s": [5, 1],  "p": [[5, 28], [15, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",        "v": "",                                                 "s": [12, 1], "p": [[10, 0],  [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "theme_temp_case_bgc", "ro": true,                  "s": [17, 1], "p": [[7, 0],   [0, 2]]}],
+                                                                [{"t": "button_color", "v": "BG",                  "tg": "theme_temp_case_bgc", "s": [6, 1],  "p": [[5,  100], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",        "v": "",                                              "s": [12, 1], "p": [[10, 0],  [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "theme_temp_case_c",  "ro": true,                "s": [17, 1], "p": [[7, 0],   [0, 2]]}],
+                                                                [{"t": "button_color", "v": "Text",               "tg": "theme_temp_case_c", "s": [6, 1],  "p": [[5,  100], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",   "v": "",                   "s": [12, 1], "p": [[10, 0], [0, 10]]}],
+                                                                [{"t": "label",   "v": "Width :",            "s": [8, 1],  "p": [[6, 0],  [0, 10]]}],
+                                                                [{"t": "in_line", "k": "theme_temp_case_w",  "s": [6, 1],  "p": [[0, 4],  [0, 10]]}],
+                                                                [{"t": "label",   "v": "Height :",           "s": [8, 1],  "p": [[20, 0], [0, 10]]}],
+                                                                [{"t": "in_line", "k": "theme_temp_case_h",  "s": [6, 1],  "p": [[0, 28], [0, 10]]}]
+                                                            ]
+                                                        ]]
+                                                    ]
+                                                ]]
+                                            ],
+                                            [
+                                                [{"t": "tab", "k": "tab_theme_positions", "v": " Pos. "},[
+                                                    [
+                                                        [{"t": "column", "k": "col_theme_positions", "p": [[0, 0], [0, 0]], "s":[480, 372], "sc": true, "scvo": true}, [
+                                                            [
+                                                                [{"t": "label", "v": "ARGB A :",           "s": [19, 1],  "p": [[10, 20], [15, 2]]}],
+                                                                [{"t": "label", "v": "X :",                "s": [4, 1],   "p": [[10, 0], [15, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_argb_a_x",   "s": [6, 1],   "p": [[0, 0],  [15, 2]]}],
+                                                                [{"t": "label", "v": "Y :",                "s": [4, 1],   "p": [[10, 0], [15, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_argb_a_y",   "s": [6, 1],   "p": [[0, 10], [15, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "ARGB B :",           "s": [19, 1],  "p": [[10, 20], [0, 2]]}],
+                                                                [{"t": "label", "v": "X :",                "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_argb_b_x",   "s": [6, 1],   "p": [[0, 0],  [0, 2]]}],
+                                                                [{"t": "label", "v": "Y :",                "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_argb_b_y",   "s": [6, 1],   "p": [[0, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "ARGB C :",           "s": [19, 1],  "p": [[10, 20], [0, 2]]}],
+                                                                [{"t": "label", "v": "X :",                "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_argb_c_x",   "s": [6, 1],   "p": [[0, 0],  [0, 2]]}],
+                                                                [{"t": "label", "v": "Y :",                "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_argb_c_y",   "s": [6, 1],   "p": [[0, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "ARGB D :",           "s": [19, 1],  "p": [[10, 20], [0, 2]]}],
+                                                                [{"t": "label", "v": "X :",                "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_argb_d_x",   "s": [6, 1],   "p": [[0, 0],  [0, 2]]}],
+                                                                [{"t": "label", "v": "Y :",                "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_argb_d_y",   "s": [6, 1],   "p": [[0, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "ARGB E :",           "s": [19, 1],  "p": [[10, 20], [0, 2]]}],
+                                                                [{"t": "label", "v": "X :",                "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_argb_e_x",   "s": [6, 1],   "p": [[0, 0],  [0, 2]]}],
+                                                                [{"t": "label", "v": "Y :",                "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_argb_e_y",   "s": [6, 1],   "p": [[0, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "ARGB F :",           "s": [19, 1],  "p": [[10, 20], [0, 10]]}],
+                                                                [{"t": "label", "v": "X :",                "s": [4, 1],   "p": [[10, 0], [0, 10]]}],
+                                                                [{"t": "in_line", "k": "theme_argb_f_x",   "s": [6, 1],   "p": [[0, 0],  [0, 10]]}],
+                                                                [{"t": "label", "v": "Y :",                "s": [4, 1],   "p": [[10, 0], [0, 10]]}],
+                                                                [{"t": "in_line", "k": "theme_argb_f_y",   "s": [6, 1],   "p": [[0, 10], [0, 10]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Mode Silent :",           "s": [19, 1],  "p": [[10, 20], [0, 2]]}],
+                                                                [{"t": "label", "v": "X :",                     "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_mode_silent_x",   "s": [6, 1],   "p": [[0, 0],  [0, 2]]}],
+                                                                [{"t": "label", "v": "Y :",                     "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_mode_silent_y",   "s": [6, 1],   "p": [[0, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Mode Performance :",         "s": [19, 1],  "p": [[10, 20], [0, 10]]}],
+                                                                [{"t": "label", "v": "X :",                        "s": [4, 1],   "p": [[10, 0], [0, 10]]}],
+                                                                [{"t": "in_line", "k": "theme_mode_performance_x", "s": [6, 1],   "p": [[0, 0],  [0, 10]]}],
+                                                                [{"t": "label", "v": "Y :",                        "s": [4, 1],   "p": [[10, 0], [0, 10]]}],
+                                                                [{"t": "in_line", "k": "theme_mode_performance_y", "s": [6, 1],   "p": [[0, 10], [0, 10]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Steps Soc :",       "s": [19, 1],  "p": [[10, 20], [0, 2]]}],
+                                                                [{"t": "label", "v": "X :",                   "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_soc_x",     "s": [6, 1],   "p": [[0, 0],  [0, 2]]}],
+                                                                [{"t": "label", "v": "Y :",                   "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_soc_y",     "s": [6, 1],   "p": [[0, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Steps CPU :",       "s": [19, 1],  "p": [[10, 20], [0, 2]]}],
+                                                                [{"t": "label", "v": "X :",                   "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_cpu_x",     "s": [6, 1],   "p": [[0, 0],  [0, 2]]}],
+                                                                [{"t": "label", "v": "Y :",                   "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_cpu_y",     "s": [6, 1],   "p": [[0, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Steps GPU :",       "s": [19, 1],  "p": [[10, 20], [0, 2]]}],
+                                                                [{"t": "label", "v": "X :",                   "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_gpu_x",     "s": [6, 1],   "p": [[0, 0],  [0, 2]]}],
+                                                                [{"t": "label", "v": "Y :",                   "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_gpu_y",     "s": [6, 1],   "p": [[0, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Steps Case :",      "s": [19, 1],  "p": [[10, 20], [0, 2]]}],
+                                                                [{"t": "label", "v": "X :",                   "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_case_x",    "s": [6, 1],   "p": [[0, 0],  [0, 2]]}],
+                                                                [{"t": "label", "v": "Y :",                   "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_case_y",    "s": [6, 1],   "p": [[0, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Steps Pump 1 :",    "s": [19, 1],  "p": [[10, 20], [0, 2]]}],
+                                                                [{"t": "label", "v": "X :",                   "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_pump_1_x",  "s": [6, 1],   "p": [[0, 0],  [0, 2]]}],
+                                                                [{"t": "label", "v": "Y :",                   "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_pump_1_y",  "s": [6, 1],   "p": [[0, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "PWM Steps Pump 2 :",    "s": [19, 1],  "p": [[10, 20], [0, 10]]}],
+                                                                [{"t": "label", "v": "X :",                   "s": [4, 1],   "p": [[10, 0], [0, 10]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_pump_2_x",  "s": [6, 1],   "p": [[0, 0],  [0, 10]]}],
+                                                                [{"t": "label", "v": "Y :",                   "s": [4, 1],   "p": [[10, 0], [0, 10]]}],
+                                                                [{"t": "in_line", "k": "theme_pwm_pump_2_y",  "s": [6, 1],   "p": [[0, 10], [0, 10]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "RPM Soc :",             "s": [19, 1],  "p": [[10, 20], [0, 2]]}],
+                                                                [{"t": "label", "v": "X :",                   "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_rpm_soc_x",     "s": [6, 1],   "p": [[0, 0],  [0, 2]]}],
+                                                                [{"t": "label", "v": "Y :",                   "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_rpm_soc_y",     "s": [6, 1],   "p": [[0, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "RPM CPU :",             "s": [19, 1],  "p": [[10, 20], [0, 2]]}],
+                                                                [{"t": "label", "v": "X :",                   "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_rpm_cpu_x",     "s": [6, 1],   "p": [[0, 0],  [0, 2]]}],
+                                                                [{"t": "label", "v": "Y :",                   "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_rpm_cpu_y",     "s": [6, 1],   "p": [[0, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "RPM GPU :",             "s": [19, 1],  "p": [[10, 20], [0, 2]]}],
+                                                                [{"t": "label", "v": "X :",                   "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_rpm_gpu_x",     "s": [6, 1],   "p": [[0, 0],  [0, 2]]}],
+                                                                [{"t": "label", "v": "Y :",                   "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_rpm_gpu_y",     "s": [6, 1],   "p": [[0, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "RPM Case :",            "s": [19, 1],  "p": [[10, 20], [0, 2]]}],
+                                                                [{"t": "label", "v": "X :",                   "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_rpm_case_x",    "s": [6, 1],   "p": [[0, 0],  [0, 2]]}],
+                                                                [{"t": "label", "v": "Y :",                   "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_rpm_case_y",    "s": [6, 1],   "p": [[0, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "RPM Pump 1 :",          "s": [19, 1],  "p": [[10, 20], [0, 2]]}],
+                                                                [{"t": "label", "v": "X :",                   "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_rpm_pump_1_x",  "s": [6, 1],   "p": [[0, 0],  [0, 2]]}],
+                                                                [{"t": "label", "v": "Y :",                   "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_rpm_pump_1_y",  "s": [6, 1],   "p": [[0, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "RPM Pump 2 :",          "s": [19, 1],  "p": [[10, 20], [0, 10]]}],
+                                                                [{"t": "label", "v": "X :",                   "s": [4, 1],   "p": [[10, 0], [0, 10]]}],
+                                                                [{"t": "in_line", "k": "theme_rpm_pump_2_x",  "s": [6, 1],   "p": [[0, 0],  [0, 10]]}],
+                                                                [{"t": "label", "v": "Y :",                   "s": [4, 1],   "p": [[10, 0], [0, 10]]}],
+                                                                [{"t": "in_line", "k": "theme_rpm_pump_2_y",  "s": [6, 1],   "p": [[0, 10], [0, 10]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Temperature Soc :",     "s": [19, 1],  "p": [[10, 20], [0, 2]]}],
+                                                                [{"t": "label", "v": "X :",                   "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_temp_soc_x",    "s": [6, 1],   "p": [[0, 0],  [0, 2]]}],
+                                                                [{"t": "label", "v": "Y :",                   "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_temp_soc_y",    "s": [6, 1],   "p": [[0, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Temperature CPU :",     "s": [19, 1],  "p": [[10, 20], [0, 2]]}],
+                                                                [{"t": "label", "v": "X :",                   "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_temp_cpu_x",    "s": [6, 1],   "p": [[0, 0],  [0, 2]]}],
+                                                                [{"t": "label", "v": "Y :",                   "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_temp_cpu_y",    "s": [6, 1],   "p": [[0, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Temperature GPU :",     "s": [19, 1],  "p": [[10, 20], [0, 2]]}],
+                                                                [{"t": "label", "v": "X :",                   "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_temp_gpu_x",    "s": [6, 1],   "p": [[0, 0],  [0, 2]]}],
+                                                                [{"t": "label", "v": "Y :",                   "s": [4, 1],   "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_line", "k": "theme_temp_gpu_y",    "s": [6, 1],   "p": [[0, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Temperature Case :",    "s": [19, 1],  "p": [[10, 20], [0, 10]]}],
+                                                                [{"t": "label", "v": "X :",                   "s": [4, 1],   "p": [[10, 0], [0, 10]]}],
+                                                                [{"t": "in_line", "k": "theme_temp_case_x",   "s": [6, 1],   "p": [[0, 0],  [0, 10]]}],
+                                                                [{"t": "label", "v": "Y :",                   "s": [4, 1],   "p": [[10, 0], [0, 10]]}],
+                                                                [{"t": "in_line", "k": "theme_temp_case_y",   "s": [6, 1],   "p": [[0, 10], [0, 10]]}]
+                                                            ]
+                                                        ]]
+                                                    ]
+                                                ]]
+                                            ]
+                                        ]]
+                                    ],
+                                    [
+                                        [{"t": "frame", "s":[495, 70], "p": [[10, 10], [0, 10]], "v": " Create new theme "}, [
+                                            [
+                                                [{"t": "label", "v": "Name :",       "s": [22, 1], "p": [[10, 0], [10, 10]]}],
+                                                [{"t": "in_line", "k": "theme_name", "s": [23, 1], "p": [[13, 10], [10, 10]]}]
+                                            ]
+                                        ]]
+                                    ]
+                                ]]
+                            ]
+                        ]]
+                    ],
+                    [
+                        [{"t": "tab", "k": "tab_argb", "v": " ARGB "},[
+                            [
+                                [{"t": "column", "p": [[4, 0], [0, 0]], "s":[525, 730]}, [
+                                    [
+                                        [{"t": "frame", "s":[495, 259], "p": [[10, 10], [10, 10]], "v": " ARGB Modes "}, [
+                                            [
+                                                [{"t": "label", "v": "Number of LED :",     "s": [40, 1], "p": [[10, 0], [10, 2]]}],
+                                                [{"t": "in_combo", "k": "argb_number_led",  "s": [3, 1],  "p": [[18, 10], [10, 2]]}]
+                                            ],
+                                            [
+                                                [{"t": "label", "v": "ARGB A Mode :",        "s": [20, 1],  "p": [[10, 0], [0, 2]]}],
+                                                [{"t": "in_combo", "k": "argb_a_mode",       "s": [24, 1],  "p": [[10, 12], [0, 2]]}]
+                                            ],
+                                            [
+                                                [{"t": "label", "v": "ARGB B Mode :",        "s": [20, 1],  "p": [[10, 0], [0, 2]]}],
+                                                [{"t": "in_combo", "k": "argb_b_mode",       "s": [24, 1],  "p": [[10, 12], [0, 2]]}]
+                                            ],
+                                            [
+                                                [{"t": "label", "v": "ARGB C Mode :",        "s": [20, 1],  "p": [[10, 0], [0, 2]]}],
+                                                [{"t": "in_combo", "k": "argb_c_mode",       "s": [24, 1],  "p": [[10, 12], [0, 2]]}]
+                                            ],
+                                            [
+                                                [{"t": "label", "v": "ARGB D Mode :",        "s": [20, 1],  "p": [[10, 0], [0, 2]]}],
+                                                [{"t": "in_combo", "k": "argb_d_mode",       "s": [24, 1],  "p": [[10, 12], [0, 2]]}]
+                                            ],
+                                            [
+                                                [{"t": "label", "v": "ARGB E Mode :",        "s": [20, 1],  "p": [[10, 0], [0, 2]]}],
+                                                [{"t": "in_combo", "k": "argb_e_mode",       "s": [24, 1],  "p": [[10, 12], [0, 2]]}]
+                                            ],
+                                            [
+                                                [{"t": "label", "v": "ARGB F Mode :",        "s": [20, 1],  "p": [[10, 0], [0, 2]]}],
+                                                [{"t": "in_combo", "k": "argb_f_mode",       "s": [24, 1],  "p": [[10, 12], [0, 2]]}]
+                                            ],
+                                            [
+                                                [{"t": "label", "v": "ARGB Standby Mode :",  "s": [20, 1],  "p": [[10, 0], [0, 0]]}],
+                                                [{"t": "in_combo", "k": "argb_standby_mode", "s": [24, 1],  "p": [[10, 12], [0, 0]]}]
+                                            ]
+                                        ]]
+                                    ],
+                                    [
+
+                                        [{"t": "tab_group", "k": "tab_group_argb_select", "s":[493, 158], "p": [[10, 10], [10, 10]]}, [
+                                            [
+                                                [{"t": "tab", "k": "tab_argb_a", "v": " A "},[
+                                                    [
+                                                        [{"t": "column", "k": "col_argb_a", "p": [[0, 0], [0, 0]],"sc": false, "scvo": false, "vbl": true}, [
+                                                            [
+                                                                [{"t": "label",                                "v": "Color 1 :",                     "s": [30, 1], "p": [[10, 6], [10, 2]]}],
+                                                                [{"t": "in_line",      "k": "argb_a_color_1",                                        "s": [8, 1],  "p": [[5, 0],  [10, 2]]}],
+                                                                [{"t": "button_color", "k": "argb_a_color_1b", "tg": "argb_a_color_1", "v": "Color", "s": [6, 1],  "p": [[5, 10], [10, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",                                "v": "Color 2 :",                     "s": [30, 1], "p": [[10, 6], [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "argb_a_color_2",                                        "s": [8, 1],  "p": [[5, 0],  [0, 2]]}],
+                                                                [{"t": "button_color", "k": "argb_a_color_2b", "tg": "argb_a_color_2", "v": "Color", "s": [6, 1],  "p": [[5, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",                                "v": "Color 3 :",                     "s": [30, 1], "p": [[10, 6], [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "argb_a_color_3",                                        "s": [8, 1],  "p": [[5, 0],  [0, 2]]}],
+                                                                [{"t": "button_color", "k": "argb_a_color_3b", "tg": "argb_a_color_3", "v": "Color", "s": [6, 1],  "p": [[5, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Speed :",                  "s": [40, 1], "p": [[10, 0],  [0, 2]]}],
+                                                                [{"t": "in_combo", "k": "argb_a_speed",          "s": [3, 1],  "p": [[20, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Intensity Mini :",         "s": [40, 1], "p": [[10, 0],  [0, 10]]}],
+                                                                [{"t": "in_combo", "k": "argb_a_intensity_min",  "s": [3, 1],  "p": [[20, 10], [0, 10]]}]
+                                                            ]
+                                                        ]]
+                                                    ]
+                                                ]]
+                                            ],
+                                            [
+                                                [{"t": "tab", "k": "tab_argb_b", "v": " B "},[
+                                                    [
+                                                        [{"t": "column", "k": "col_argb_b", "p": [[0, 0], [0, 0]],"sc": false, "scvo": false, "vbl": true}, [
+                                                            [
+                                                                [{"t": "label",                                "v": "Color 1 :",                     "s": [30, 1], "p": [[10, 6], [10, 2]]}],
+                                                                [{"t": "in_line",      "k": "argb_b_color_1",                                        "s": [8, 1],  "p": [[5, 0],  [10, 2]]}],
+                                                                [{"t": "button_color", "k": "argb_b_color_1b", "tg": "argb_b_color_1", "v": "Color", "s": [6, 1],  "p": [[5, 10], [10, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",                                "v": "Color 2 :",                     "s": [30, 1], "p": [[10, 6], [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "argb_b_color_2",                                        "s": [8, 1],  "p": [[5, 0],  [0, 2]]}],
+                                                                [{"t": "button_color", "k": "argb_b_color_2b", "tg": "argb_b_color_2", "v": "Color", "s": [6, 1],  "p": [[5, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",                                "v": "Color 3 :",                     "s": [30, 1], "p": [[10, 6], [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "argb_b_color_3",                                        "s": [8, 1],  "p": [[5, 0],  [0, 2]]}],
+                                                                [{"t": "button_color", "k": "argb_b_color_3b", "tg": "argb_b_color_3", "v": "Color", "s": [6, 1],  "p": [[5, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Speed :",                  "s": [40, 1], "p": [[10, 0],  [0, 2]]}],
+                                                                [{"t": "in_combo", "k": "argb_b_speed",          "s": [3, 1],  "p": [[20, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Intensity Mini :",         "s": [40, 1], "p": [[10, 0],  [0, 10]]}],
+                                                                [{"t": "in_combo", "k": "argb_b_intensity_min",  "s": [3, 1],  "p": [[20, 10], [0, 10]]}]
+                                                            ]
+                                                        ]]
+                                                    ]
+                                                ]]
+                                            ],
+                                            [
+                                                [{"t": "tab", "k": "tab_argb_c", "v": " C "},[
+                                                    [
+                                                        [{"t": "column", "k": "col_argb_c", "p": [[0, 0], [0, 0]],"sc": false, "scvo": false, "vbl": true}, [
+                                                            [
+                                                                [{"t": "label",                                "v": "Color 1 :",                     "s": [30, 1], "p": [[10, 6], [10, 2]]}],
+                                                                [{"t": "in_line",      "k": "argb_c_color_1",                                        "s": [8, 1],  "p": [[5, 0],  [10, 2]]}],
+                                                                [{"t": "button_color", "k": "argb_c_color_1b", "tg": "argb_c_color_1", "v": "Color", "s": [6, 1],  "p": [[5, 10], [10, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",                                "v": "Color 2 :",                     "s": [30, 1], "p": [[10, 6], [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "argb_c_color_2",                                        "s": [8, 1],  "p": [[5, 0],  [0, 2]]}],
+                                                                [{"t": "button_color", "k": "argb_c_color_2b", "tg": "argb_c_color_2", "v": "Color", "s": [6, 1],  "p": [[5, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",                                "v": "Color 3 :",                     "s": [30, 1], "p": [[10, 6], [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "argb_c_color_3",                                        "s": [8, 1],  "p": [[5, 0],  [0, 2]]}],
+                                                                [{"t": "button_color", "k": "argb_c_color_3b", "tg": "argb_c_color_3", "v": "Color", "s": [6, 1],  "p": [[5, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Speed :",                  "s": [40, 1], "p": [[10, 0],  [0, 2]]}],
+                                                                [{"t": "in_combo", "k": "argb_c_speed",          "s": [3, 1],  "p": [[20, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Intensity Mini :",         "s": [40, 1], "p": [[10, 0],  [0, 10]]}],
+                                                                [{"t": "in_combo", "k": "argb_c_intensity_min",  "s": [3, 1],  "p": [[20, 10], [0, 10]]}]
+                                                            ]
+                                                        ]]
+                                                    ]
+                                                ]]
+                                            ],
+                                            [
+                                                [{"t": "tab", "k": "tab_argb_d", "v": " D "},[
+                                                    [
+                                                        [{"t": "column", "k": "col_argb_d", "p": [[0, 0], [0, 0]],"sc": false, "scvo": false, "vbl": true}, [
+                                                            [
+                                                                [{"t": "label",                                "v": "Color 1 :",                     "s": [30, 1], "p": [[10, 6], [10, 2]]}],
+                                                                [{"t": "in_line",      "k": "argb_d_color_1",                                        "s": [8, 1],  "p": [[5, 0],  [10, 2]]}],
+                                                                [{"t": "button_color", "k": "argb_d_color_1b", "tg": "argb_d_color_1", "v": "Color", "s": [6, 1],  "p": [[5, 10], [10, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",                                "v": "Color 2 :",                     "s": [30, 1], "p": [[10, 6], [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "argb_d_color_2",                                        "s": [8, 1],  "p": [[5, 0],  [0, 2]]}],
+                                                                [{"t": "button_color", "k": "argb_d_color_2b", "tg": "argb_d_color_2", "v": "Color", "s": [6, 1],  "p": [[5, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",                                "v": "Color 3 :",                     "s": [30, 1], "p": [[10, 6], [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "argb_d_color_3",                                        "s": [8, 1],  "p": [[5, 0],  [0, 2]]}],
+                                                                [{"t": "button_color", "k": "argb_d_color_3b", "tg": "argb_d_color_3", "v": "Color", "s": [6, 1],  "p": [[5, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Speed :",                  "s": [40, 1], "p": [[10, 0],  [0, 2]]}],
+                                                                [{"t": "in_combo", "k": "argb_d_speed",          "s": [3, 1],  "p": [[20, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Intensity Mini :",         "s": [40, 1], "p": [[10, 0],  [0, 10]]}],
+                                                                [{"t": "in_combo", "k": "argb_d_intensity_min",  "s": [3, 1],  "p": [[20, 10], [0, 10]]}]
+                                                            ]
+                                                        ]]
+                                                    ]
+                                                ]]
+                                            ],
+                                            [
+                                                [{"t": "tab", "k": "tab_argb_e", "v": " E "},[
+                                                    [
+                                                        [{"t": "column", "k": "col_argb_e", "p": [[0, 0], [0, 0]],"sc": false, "scvo": false, "vbl": true}, [
+                                                            [
+                                                                [{"t": "label",                                "v": "Color 1 :",                     "s": [30, 1], "p": [[10, 6], [10, 2]]}],
+                                                                [{"t": "in_line",      "k": "argb_e_color_1",                                        "s": [8, 1],  "p": [[5, 0],  [10, 2]]}],
+                                                                [{"t": "button_color", "k": "argb_e_color_1b", "tg": "argb_e_color_1", "v": "Color", "s": [6, 1],  "p": [[5, 10], [10, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",                                "v": "Color 2 :",                     "s": [30, 1], "p": [[10, 6], [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "argb_e_color_2",                                        "s": [8, 1],  "p": [[5, 0],  [0, 2]]}],
+                                                                [{"t": "button_color", "k": "argb_e_color_2b", "tg": "argb_e_color_2", "v": "Color", "s": [6, 1],  "p": [[5, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",                                "v": "Color 3 :",                     "s": [30, 1], "p": [[10, 6], [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "argb_e_color_3",                                        "s": [8, 1],  "p": [[5, 0],  [0, 2]]}],
+                                                                [{"t": "button_color", "k": "argb_e_color_3b", "tg": "argb_e_color_3", "v": "Color", "s": [6, 1],  "p": [[5, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Speed :",                  "s": [40, 1], "p": [[10, 0],  [0, 2]]}],
+                                                                [{"t": "in_combo", "k": "argb_e_speed",          "s": [3, 1],  "p": [[20, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Intensity Mini :",         "s": [40, 1], "p": [[10, 0],  [0, 10]]}],
+                                                                [{"t": "in_combo", "k": "argb_e_intensity_min",  "s": [3, 1],  "p": [[20, 10], [0, 10]]}]
+                                                            ]
+                                                        ]]
+                                                    ]
+                                                ]]
+                                            ],
+                                            [
+                                                [{"t": "tab", "k": "tab_argb_f", "v": " F "},[
+                                                    [
+                                                        [{"t": "column", "k": "col_argb_f", "p": [[0, 0], [0, 0]],"sc": false, "scvo": false, "vbl": true}, [
+                                                            [
+                                                                [{"t": "label",                                "v": "Color 1 :",                     "s": [30, 1], "p": [[10, 6], [10, 2]]}],
+                                                                [{"t": "in_line",      "k": "argb_f_color_1",                                        "s": [8, 1],  "p": [[5, 0],  [10, 2]]}],
+                                                                [{"t": "button_color", "k": "argb_f_color_1b", "tg": "argb_f_color_1", "v": "Color", "s": [6, 1],  "p": [[5, 10], [10, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",                                "v": "Color 2 :",                     "s": [30, 1], "p": [[10, 6], [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "argb_f_color_2",                                        "s": [8, 1],  "p": [[5, 0],  [0, 2]]}],
+                                                                [{"t": "button_color", "k": "argb_f_color_2b", "tg": "argb_f_color_2", "v": "Color", "s": [6, 1],  "p": [[5, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",                                "v": "Color 3 :",                     "s": [30, 1], "p": [[10, 6], [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "argb_f_color_3",                                        "s": [8, 1],  "p": [[5, 0],  [0, 2]]}],
+                                                                [{"t": "button_color", "k": "argb_f_color_3b", "tg": "argb_f_color_3", "v": "Color", "s": [6, 1],  "p": [[5, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Speed :",                  "s": [40, 1], "p": [[10, 0],  [0, 2]]}],
+                                                                [{"t": "in_combo", "k": "argb_f_speed",          "s": [3, 1],  "p": [[20, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Intensity Mini :",         "s": [40, 1], "p": [[10, 0],  [0, 10]]}],
+                                                                [{"t": "in_combo", "k": "argb_f_intensity_min",  "s": [3, 1],  "p": [[20, 10], [0, 10]]}]
+                                                            ]
+                                                        ]]
+                                                    ]
+                                                ]]
+                                            ],
+                                            [
+                                                [{"t": "tab", "k": "tab_argb_standby", "v": " Standby "},[
+                                                    [
+                                                        [{"t": "column", "k": "col_argb_standby", "p": [[0, 0], [0, 0]],"sc": false, "scvo": false, "vbl": true}, [
+                                                            [
+                                                                [{"t": "label",                                "v": "Color 1 :",                                 "s": [30, 1], "p": [[10, 6], [10, 2]]}],
+                                                                [{"t": "in_line",      "k": "argb_standby_color_1",                                              "s": [8, 1],  "p": [[5, 0],  [10, 2]]}],
+                                                                [{"t": "button_color", "k": "argb_standby_color_1b", "tg": "argb_standby_color_1", "v": "Color", "s": [6, 1],  "p": [[5, 10], [10, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",                                "v": "Color 2 :",                                 "s": [30, 1], "p": [[10, 6], [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "argb_standby_color_2",                                              "s": [8, 1],  "p": [[5, 0],  [0, 2]]}],
+                                                                [{"t": "button_color", "k": "argb_standby_color_2b", "tg": "argb_standby_color_2", "v": "Color", "s": [6, 1],  "p": [[5, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label",                                "v": "Color 3 :",                                 "s": [30, 1], "p": [[10, 6], [0, 2]]}],
+                                                                [{"t": "in_line",      "k": "argb_standby_color_3",                                              "s": [8, 1],  "p": [[5, 0],  [0, 2]]}],
+                                                                [{"t": "button_color", "k": "argb_standby_color_3b", "tg": "argb_standby_color_3", "v": "Color", "s": [6, 1],  "p": [[5, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Speed :",               "s": [40, 1], "p": [[10, 0],  [0, 2]]}],
+                                                                [{"t": "in_combo", "k": "argb_standby_speed", "s": [3, 1],  "p": [[20, 10], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Intensity Mini :",              "s": [40, 1], "p": [[10, 0],  [0, 10]]}],
+                                                                [{"t": "in_combo", "k": "argb_standby_intensity_min", "s": [3, 1],  "p": [[20, 10], [0, 10]]}]
+                                                            ]
+                                                        ]]
+                                                    ]
+                                                ]]
+                                            ]
+                                        ]]
+                                    ]
+                                ]]
+                            ]
+                        ]]
+                    ],
+                    [
+                        [{"t": "tab", "k": "tab_cooling", "v": " Cooling "},[
+                            [
+                                [{"t": "column", "p": [[4, 0], [0, 0]], "s":[525, 730]}, [
+                                    [
+                                        [{"t": "tab_group", "k": "tab_group_cooling_select", "s":[493, 442], "p": [[10, 10], [10, 10]]}, [
+                                            [
+                                                [{"t": "tab", "k": "tab_cooling_silent", "v": " Silent "},[
+                                                    [
+                                                        [{"t": "column", "k": "col_cooling_silent", "p": [[0, 0], [0, 0]],"sc": false, "scvo": false, "vbl": true}, [
+                                                            [
+                                                                [{"t": "label", "v": "CPU PWM Min :",                            "s": [30, 1],  "p": [[10, 0], [15, 2]]}],
+                                                                [{"t": "in_combo", "k": "cooling_silent_cpu_pwm_min",            "s": [14, 1],  "p": [[10, 12], [15, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "CPU PWM Max :",                            "s": [30, 1],  "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_combo", "k": "cooling_silent_cpu_pwm_max",            "s": [14, 1],  "p": [[10, 12], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "CPU Temp. Base :",                         "s": [30, 1],  "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_combo", "k": "cooling_silent_cpu_temp_base",          "s": [14, 1],  "p": [[10, 12], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "CPU Temp. Max :",                          "s": [30, 1],  "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_combo", "k": "cooling_silent_cpu_temp_max",           "s": [14, 1],  "p": [[10, 12], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "GPU PWM Min :",                            "s": [30, 1],  "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_combo", "k": "cooling_silent_gpu_pwm_min",            "s": [14, 1],  "p": [[10, 12], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "GPU PWM Max :",                            "s": [30, 1],  "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_combo", "k": "cooling_silent_gpu_pwm_max",            "s": [14, 1],  "p": [[10, 12], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "GPU Temp. Base :",                         "s": [30, 1],  "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_combo", "k": "cooling_silent_gpu_temp_base",          "s": [14, 1],  "p": [[10, 12], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "GPU Temp. Max :",                          "s": [30, 1],  "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_combo", "k": "cooling_silent_gpu_temp_max",           "s": [14, 1],  "p": [[10, 12], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "CASE PWM Min :",                           "s": [30, 1],  "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_combo", "k": "cooling_silent_case_pwm_min",           "s": [14, 1],  "p": [[10, 12], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "CASE PWM Max :",                           "s": [30, 1],  "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_combo", "k": "cooling_silent_case_pwm_max",           "s": [14, 1],  "p": [[10, 12], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "CASE Temp. Base :",                        "s": [30, 1],  "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_combo", "k": "cooling_silent_case_temp_base",         "s": [14, 1],  "p": [[10, 12], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "CASE Temp. Max :",                         "s": [30, 1],  "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_combo", "k": "cooling_silent_case_temp_max",          "s": [14, 1],  "p": [[10, 12], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Pump 1 PWM :",                             "s": [30, 1],  "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_combo", "k": "cooling_silent_pump_1_pwm",             "s": [14, 1],  "p": [[10, 12], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Pump 2 PWM :",                             "s": [30, 1],  "p": [[10, 0], [0, 0]]}],
+                                                                [{"t": "in_combo", "k": "cooling_silent_pump_2_pwm",             "s": [14, 1],  "p": [[10, 12], [0, 0]]}]
+                                                            ]
+                                                        ]]
+                                                    ]
+                                                ]]
+                                            ],
+                                            [
+                                                [{"t": "tab", "k": "tab_cooling_performance", "v": " Performance "},[
+                                                    [
+                                                        [{"t": "column", "k": "col_cooling_performance", "p": [[0, 0], [0, 0]],"sc": false, "scvo": false, "vbl": true}, [
+                                                            [
+                                                                [{"t": "label", "v": "CPU PWM Min :",                            "s": [30, 1],  "p": [[10, 0], [15, 2]]}],
+                                                                [{"t": "in_combo", "k": "cooling_performance_cpu_pwm_min",       "s": [14, 1],  "p": [[10, 12], [15, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "CPU PWM Max :",                            "s": [30, 1],  "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_combo", "k": "cooling_performance_cpu_pwm_max",       "s": [14, 1],  "p": [[10, 12], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "CPU Temp. Base :",                         "s": [30, 1],  "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_combo", "k": "cooling_performance_cpu_temp_base",   "s": [14, 1],  "p": [[10, 12], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "CPU Temp. Max :",                          "s": [30, 1],  "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_combo", "k": "cooling_performance_cpu_temp_max",      "s": [14, 1],  "p": [[10, 12], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "GPU PWM Min :",                            "s": [30, 1],  "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_combo", "k": "cooling_performance_gpu_pwm_min",       "s": [14, 1],  "p": [[10, 12], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "GPU PWM Max :",                            "s": [30, 1],  "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_combo", "k": "cooling_performance_gpu_pwm_max",       "s": [14, 1],  "p": [[10, 12], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "GPU Temp. Base :",                         "s": [30, 1],  "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_combo", "k": "cooling_performance_gpu_temp_base",     "s": [14, 1],  "p": [[10, 12], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "GPU Temp. Max :",                          "s": [30, 1],  "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_combo", "k": "cooling_performance_gpu_temp_max",      "s": [14, 1],  "p": [[10, 12], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "CASE PWM Min :",                           "s": [30, 1],  "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_combo", "k": "cooling_performance_case_pwm_min",      "s": [14, 1],  "p": [[10, 12], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "CASE PWM Max :",                           "s": [30, 1],  "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_combo", "k": "cooling_performance_case_pwm_max",      "s": [14, 1],  "p": [[10, 12], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "CASE Temp. Base :",                        "s": [30, 1],  "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_combo", "k": "cooling_performance_case_temp_base",    "s": [14, 1],  "p": [[10, 12], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "CASE Temp. Max :",                         "s": [30, 1],  "p": [[10, 0], [0, 15]]}],
+                                                                [{"t": "in_combo", "k": "cooling_performance_case_temp_max",     "s": [14, 1],  "p": [[10, 12], [0, 15]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Pump 1 PWM :",                             "s": [30, 1],  "p": [[10, 0], [0, 2]]}],
+                                                                [{"t": "in_combo", "k": "cooling_performance_pump_1_pwm",        "s": [14, 1],  "p": [[10, 12], [0, 2]]}]
+                                                            ],
+                                                            [
+                                                                [{"t": "label", "v": "Pump 2 PWM :",                             "s": [30, 1],  "p": [[10, 0], [0, 0]]}],
+                                                                [{"t": "in_combo", "k": "cooling_performance_pump_2_pwm",        "s": [14, 1],  "p": [[10, 12], [0, 0]]}]
+                                                            ]
+                                                        ]]
+                                                    ]
+                                                ]]
+                                            ]
+                                        ]]
+                                    ]
+                                ]]
+                            ]
+                        ]]
+                    ],
+                    [
+                        [{"t": "tab", "k": "tab_gpio-pin", "v": " GPIO-Pin "},[
+                            [
+                                [{"t": "column", "p": [[4, 0], [0, 0]], "s":[525, 730]}, [
+                                    [
+                                        [{"t": "frame", "s":[495, 124], "p": [[10, 10], [10, 10]], "v": " Sensors "}, [
+                                            [
+                                                [{"t": "label",                            "v": "Sensor 1 :", "s": [10, 1], "p": [[10, 0], [10, 2]]}],
+                                                [{"t": "label",    "k": "sensor_1_target", "v": "N/A",        "s": [14, 1], "p": [[10, 0], [10, 2]]}],
+                                                [{"t": "label",    "k": "sensor_1_temp",   "v": "N/A °",      "s": [5, 1],  "p": [[6, 0],  [10, 2]]}],
+                                                [{"t": "in_combo", "k": "sensor_1_value",                     "s": [14, 1], "p": [[0, 12], [10, 2]]}]
+                                            ],
+                                            [
+                                                [{"t": "label",                            "v": "Sensor 2 :",  "s": [10, 1], "p": [[10, 0], [0, 2]]}],
+                                                [{"t": "label",    "k": "sensor_2_target", "v": "N/A",         "s": [14, 1], "p": [[10, 0], [0, 2]]}],
+                                                [{"t": "label",    "k": "sensor_2_temp",   "v": "N/A °",       "s": [5, 1],  "p": [[6, 0],  [0, 2]]}],
+                                                [{"t": "in_combo", "k": "sensor_2_value",                      "s": [14, 1], "p": [[0, 12], [0, 2]]}]
+                                            ],
+                                            [
+                                                [{"t": "label",                            "v": "Sensor 3 :", "s": [10, 1], "p": [[10, 0], [0, 10]]}],
+                                                [{"t": "label",    "k": "sensor_3_target", "v": "N/A",        "s": [14, 1], "p": [[10, 0], [0, 10]]}],
+                                                [{"t": "label",    "k": "sensor_3_temp",   "v": "N/A °",      "s": [5, 1],  "p": [[6, 0],  [0, 10]]}],
+                                                [{"t": "in_combo", "k": "sensor_3_value",                     "s": [14, 1], "p": [[0, 12], [0, 10]]}]
+                                            ]
+                                         ]]
+                                    ],
+                                    [
+                                        [{"t": "tab_group", "k": "tab_group_gpio_select", "s":[493, 187], "p": [[10, 10], [10, 10]]}, [
+                                            [
+                                                [{"t": "tab", "k": "tab_gpio_tach", "v": " Tach "},[
+                                                    [
+                                                        [{"t": "label", "v": "SoC :",                "s": [30, 1],  "p": [[10, 0], [15, 2]]}],
+                                                        [{"t": "in_combo", "k": "gpio_tach_soc",     "s": [14, 1],  "p": [[10, 12], [15, 2]]}]
+                                                    ],
+                                                    [
+                                                        [{"t": "label", "v": "CPU :",                "s": [30, 1],  "p": [[10, 0], [0, 2]]}],
+                                                        [{"t": "in_combo", "k": "gpio_tach_cpu",     "s": [14, 1],  "p": [[10, 12], [0, 2]]}]
+                                                    ],
+                                                    [
+                                                        [{"t": "label", "v": "GPU :",                "s": [30, 1],  "p": [[10, 0], [0, 2]]}],
+                                                        [{"t": "in_combo", "k": "gpio_tach_gpu",     "s": [14, 1],  "p": [[10, 12], [0, 2]]}]
+                                                    ],
+                                                    [
+                                                        [{"t": "label", "v": "Case :",               "s": [30, 1],  "p": [[10, 0], [0, 2]]}],
+                                                        [{"t": "in_combo", "k": "gpio_tach_case",    "s": [14, 1],  "p": [[10, 12], [0, 2]]}]
+                                                    ],
+                                                    [
+                                                        [{"t": "label", "v": "Pump 1 :",             "s": [30, 1],  "p": [[10, 0], [0, 2]]}],
+                                                        [{"t": "in_combo", "k": "gpio_tach_pump_1",  "s": [14, 1],  "p": [[10, 12], [0, 2]]}]
+                                                    ],
+                                                    [
+                                                        [{"t": "label", "v": "Pump 2 :",             "s": [30, 1],  "p": [[10, 0], [0, 10]]}],
+                                                        [{"t": "in_combo", "k": "gpio_tach_pump_2",  "s": [14, 1],  "p": [[10, 12], [0, 10]]}]
+                                                    ]
+                                                ]]
+                                            ],
+                                            [
+                                                [{"t": "tab", "k": "tab_gpio_pca", "v": " PCA "},[
+                                                    [
+                                                        [{"t": "label", "v": "SoC :",              "s": [30, 1],  "p": [[10, 0], [15, 2]]}],
+                                                        [{"t": "in_combo", "k": "gpio_pca_soc",    "s": [14, 1],  "p": [[10, 12], [15, 2]]}]
+                                                    ],
+                                                    [
+                                                        [{"t": "label", "v": "CPU :",              "s": [30, 1],  "p": [[10, 0], [0, 2]]}],
+                                                        [{"t": "in_combo", "k": "gpio_pca_cpu",    "s": [14, 1],  "p": [[10, 12], [0, 2]]}]
+                                                    ],
+                                                    [
+                                                        [{"t": "label", "v": "GPU :",              "s": [30, 1],  "p": [[10, 0], [0, 2]]}],
+                                                        [{"t": "in_combo", "k": "gpio_pca_gpu",    "s": [14, 1],  "p": [[10, 12], [0, 2]]}]
+                                                    ],
+                                                    [
+                                                        [{"t": "label", "v": "Case :",             "s": [30, 1],  "p": [[10, 0], [0, 2]]}],
+                                                        [{"t": "in_combo", "k": "gpio_pca_case",   "s": [14, 1],  "p": [[10, 12], [0, 2]]}]
+                                                    ],
+                                                    [
+                                                        [{"t": "label", "v": "Pump 1 :",           "s": [30, 1],  "p": [[10, 0], [0, 2]]}],
+                                                        [{"t": "in_combo", "k": "gpio_pca_pump_1", "s": [14, 1],  "p": [[10, 12], [0, 2]]}]
+                                                    ],
+                                                    [
+                                                        [{"t": "label", "v": "Pump 2 :",           "s": [30, 1],  "p": [[10, 0], [0, 10]]}],
+                                                        [{"t": "in_combo", "k": "gpio_pca_pump_2", "s": [14, 1],  "p": [[10, 12], [0, 10]]}]
+                                                    ]
+                                                ]]
+                                            ]
+                                        ]]
+                                    ]
+                               ]]
+                           ]
+                        ]]
+                    ]
+                ]]
+            ]
+        ]],
+        [{"t": "column", "p": [[0, 0], [0, 0]], "s":[844, 770]}, [
+            [
+                [{"t": "tab_group", "k": "preview", "p": [[0, 0], [0, 0]], "s":[840, 548]}, [
+                    [
+                        [{"t": "tab", "k": "tab_preview_theme", "v": " Theme "},[
+                            [
+                                [{"t": "tab_group", "k": "preview_theme", "p": [[20, 10], [20, 20]], "s":[800, 548]}, [
+                                    [
+                                        [{"t": "tab", "k": "tab_preview_theme_startup", "v": " Startup "},[
+                                            [
+                                                [{"t": "graph", "k": "graph_theme_startup", "p": [[0, 0], [0, 0]], "s": [800, 480], "bgc": "#000000"}]
+                                            ]
+                                        ]],
+                                        [{"t": "tab", "k": "tab_preview_theme_in_use_off", "v": " In Use : OFF "},[
+                                            [
+                                                [{"t": "graph", "k": "graph_theme_in_use_off", "p": [[0, 0], [0, 0]], "s": [800, 480], "bgc": "#000000"}]
+                                            ]
+                                        ]],
+                                        [{"t": "tab", "k": "tab_preview_theme_in_use_on", "v": " In Use : ON "},[
+                                            [
+                                                [{"t": "graph", "k": "graph_theme_in_use_on", "p": [[0, 0], [0, 0]], "s": [800, 480], "bgc": "#000000"}]
+                                            ]
+                                        ]],
+                                        [{"t": "tab", "k": "tab_preview_theme_in_standby_off", "v": " In Standby : OFF "},[
+                                            [
+                                                [{"t": "graph", "k": "graph_theme_in_standby_off", "p": [[0, 0], [0, 0]], "s": [800, 480], "bgc": "#000000"}]
+                                            ]
+                                        ]],
+                                        [{"t": "tab", "k": "tab_preview_theme_in_standby_on", "v": " In Standby : ON "},[
+                                            [
+                                                [{"t": "graph", "k": "graph_theme_in_standby_on", "p": [[0, 0], [0, 0]], "s": [800, 480], "bgc": "#000000"}]
+                                            ]
+                                        ]]
+                                    ]
+                                ]]
+                            ]
+                        ]],
+                        [{"t": "tab", "k": "tab_preview_cooling", "v": " Cooling "},[
+                            [
+                                [{"t": "tab_group", "k": "preview_cooling", "p": [[20, 10], [20, 20]], "s":[800, 500]}, [
+                                    [
+                                        [{"t": "tab", "k": "tab_preview_cooling_silent", "v": " Silent "},[
+                                            [
+                                                [{"t": "graph", "k": "graph_cooling_silent", "p": [[0, 0], [0, 0]], "s": [800, 480], "bgc": "#000000"}]
+                                            ]
+                                        ]],
+                                        [{"t": "tab", "k": "tab_preview_cooling_performance", "v": " Performance "},[
+                                            [
+                                                [{"t": "graph", "k": "graph_cooling_performance", "p": [[0, 0], [0, 0]], "s": [800, 480], "bgc": "#000000"}]
+                                            ]
+                                        ]]
+                                    ]
+                                ]]
+                            ]
+                        ]]
+                    ]
+                ]]
+            ],
+            [
+                [{"t": "frame", "s":[646, 182], "p": [[0, 0], [10, 10]], "v": " Logs "}, [
+                    [
+                        [{"t": "in_lines", "k": "logs", "p": [[15, 15], [14, 14]], "s": [60, 6]}]
+                    ]
+                ]],
+                [{"t": "frame", "s":[180, 182], "p": [[15, 0], [10, 10]], "v": " Generate "}, [
+                    [
+                        [{"t": "button", "k": "generate_preview", "v": "Preview", "s": [30, 2], "p": [[15, 15], [10, 0]]}]
+                    ],
+                    [
+                        [{"t": "button", "k": "generate_save", "v": "Save", "s": [30, 2], "p": [[15, 15], [8, 0]]}]
+                    ],
+                    [
+                        [{"t": "button", "k": "generate_load", "v": "Load", "s": [30, 2], "p": [[15, 15], [8, 10]]}]
+                    ]
+                ]]
+            ]
+        ]]
+    ]]
+}

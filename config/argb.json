@@ -1,0 +1,59 @@
+{
+    "number": 18,
+    "a": {
+        "mode": "fixe",
+        "color_1": "#602c2c",
+        "color_2": "#d9d9d9",
+        "color_3": "#2c2c60",
+        "intensity_min": 40,
+        "speed": 10
+    },
+    "b": {
+        "mode": "pulse",
+        "color_1": "#6e6ef0",
+        "color_2": "#6ef06e",
+        "color_3": "#fcba03",
+        "intensity_min": 40,
+        "speed": 10
+    },
+    "c": {
+        "mode": "pulse_two_colors",
+        "color_1": "#6e6ef0",
+        "color_2": "#6ef06e",
+        "color_3": "#fcba03",
+        "intensity_min": 40,
+        "speed": 10
+    },
+    "d": {
+        "mode": "pulse_three_colors",
+        "color_1": "#602c2c",
+        "color_2": "#2c602c",
+        "color_3": "#2c2c60",
+        "intensity_min": 90,
+        "speed": 10
+    },
+    "e": {
+        "mode": "switch_two_colors",
+        "color_1": "#6e6ef0",
+        "color_2": "#6ef06e",
+        "color_3": "#fcba03",
+        "intensity_min": 40,
+        "speed": 10
+    },
+    "f": {
+        "mode": "switch_three_colors",
+        "color_1": "#6e6ef0",
+        "color_2": "#6ef06e",
+        "color_3": "#fcba03",
+        "intensity_min": 40,
+        "speed": 10
+    },
+    "standby": {
+        "mode": "off",
+        "color_1": "#6e6ef0",
+        "color_2": "#6ef06e",
+        "color_3": "#fcba03",
+        "intensity_min": 40,
+        "speed": 10
+    }
+}
