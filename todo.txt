@@ -1,0 +1,2 @@
+Passer ARGB en standby lorsque plus d'alim
+Lancer ARGB au démarrage
