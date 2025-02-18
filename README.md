@@ -96,7 +96,10 @@ Une fois l’ordinateur allumé, le Raspberry PI contrôle les signaux PWM des d
 <br/>
 ⚠️ Les liens vers Amazon sont le matériel que j’ai utilisé, c’est simplement indicatif.<br/>
 
+<br/><br/>
+
 ## 🛠️ PCB à faire fabriquer et souder :
+
 
 | Pièces      | Coupler                                                                                                                        | Power                                                                                                                      |
 |-------------|--------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
