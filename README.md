@@ -20,6 +20,8 @@ Les configurations possibles sous cette version sont de :
 Le logiciel Archmonitor est basé sur la surcouche `archgui` elle-même basé sur `FreeSimpleGUI`. 
 Ce programme fonctionne sur un `Raspberry PI 4B` avec le dernier `Raspberry Pi OS 64Bits` comme OS.<br/>
 
+Des vidéos d'explications et de démonstration sont à venir.
+
 ## 😊 Fonctions à venir :
 
 - Ajout des logs dans le programme de configuration
