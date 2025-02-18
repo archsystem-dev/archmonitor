@@ -131,7 +131,6 @@ Une fois l’ordinateur allumé, le Raspberry PI contrôle les signaux PWM des d
  - Démarrage du PI
 
 ```bash
-sudo apt-get install git
 git clone https://github.com/archsystem-dev/archmonitor/ archmonitor
 sudo cd archmonitor
 sudo bash install.sh
