@@ -6,6 +6,14 @@ import time
 import signal
 import numpy
 
+from process.argb.fixe import fixe
+from process.argb.mode_pulse import mode_pulse
+from process.argb.mode_pulse_three_colors import mode_pulse_three_colors
+from process.argb.mode_pulse_two_colors import mode_pulse_two_colors
+from process.argb.mode_switch_three_colors import mode_switch_three_colors
+from process.argb.mode_switch_two_colors import mode_switch_two_colors
+from process.argb.off import off
+
 from mpunified.MPUPrcWAC import MPUPrcWAC
 
 
@@ -37,14 +45,6 @@ def hex_to_rgb(h):
         rgb.append(decimal)
 
     return tuple(rgb)
-
-
-def rgb_to_hex(rgb):
-    """
-    :param rgb:
-    :return:
-    """
-    return '#{:02x}{:02x}{:02x}'.format(rgb[0], rgb[1], rgb[2])
 
 
 class Argb(MPUPrcWAC):
@@ -109,38 +109,6 @@ class Argb(MPUPrcWAC):
                 print("import spidev")
                 print(f"Unexpected {err=}, {type(err)=}")
 
-    def set_mode(self):
-        """
-        set_mode()
-        """
-
-        self.lock = True
-
-        time.sleep(0.1)
-
-        self.mode = self.argb[self.argb_selected]["mode"]
-        self.intensity_min = self.argb[self.argb_selected]["intensity_min"]
-        self.speed = self.argb[self.argb_selected]["speed"]
-
-        self.color = {
-            "color_1": self.argb[self.argb_selected]["color_1"],
-            "color_2": self.argb[self.argb_selected]["color_2"],
-            "color_3": self.argb[self.argb_selected]["color_3"]
-        }
-
-        self.phase = 0
-        self.sequence = 0
-
-        color = self.compute_color("color_1")
-
-        self.it = 100
-        self.tr = color[0]
-        self.tg = color[1]
-        self.tb = color[2]
-
-        self.argb_in_running = self.argb_selected
-        self.lock = False
-
     def signal_handler(self, _, __):
         """
         :param self:
@@ -176,12 +144,44 @@ class Argb(MPUPrcWAC):
                         break
                     time.sleep(0.1)
 
+    def set_mode(self):
+        """
+        set_mode()
+        """
+
+        self.lock = True
+
+        time.sleep(0.1)
+
+        self.mode = self.argb[self.argb_selected]["mode"]
+        self.intensity_min = self.argb[self.argb_selected]["intensity_min"]
+        self.speed = self.argb[self.argb_selected]["speed"]
+
+        self.color = {
+            "color_1": self.argb[self.argb_selected]["color_1"],
+            "color_2": self.argb[self.argb_selected]["color_2"],
+            "color_3": self.argb[self.argb_selected]["color_3"]
+        }
+
+        self.phase = 0
+        self.sequence = 0
+
+        color = self.compute_color("color_1")
+
+        self.it = 100
+        self.tr = color[0]
+        self.tg = color[1]
+        self.tb = color[2]
+
+        self.argb_in_running = self.argb_selected
+        self.lock = False
+
     def exec_mode(self):
         """
         exec_mode()
         """
         if self.mode == "off":
-            self.mode_off()
+            self.off()
         if self.mode == "fixe":
             self.fixe()
         if self.mode == "pulse":
@@ -209,282 +209,26 @@ class Argb(MPUPrcWAC):
         if not self.testing:
             write_2812(self.spi, fi)
 
-    def mode_off(self):
-        """
-        Affiche une seule couleur fixe sans variation.
-        """
-        self.tr, self.tg, self.tb = self.compute_color("color_1")
-        self.update_leds()
-
-        # Gestion du timing des mises à jour
-        time.sleep(1 / (self.argb[self.argb_in_running]["speed"] * 10))
+    def off(self):
+        off(self)
 
     def fixe(self):
-        """
-        Affiche une seule couleur fixe sans variation.
-        """
-        self.tr, self.tg, self.tb = self.compute_color("color_1")
-        self.update_leds()
-
-        # Gestion du timing des mises à jour
-        time.sleep(1 / (self.argb[self.argb_in_running]["speed"] * 10))
+        fixe(self)
 
     def mode_pulse(self):
-        """
-        Gère une seule couleur avec une variation progressive d’intensité.
-        """
-
-        phase_it_down = [0]
-        phase_it_up = [1]
-
-        self.tr, self.tg, self.tb = self.compute_color("color_1")
-
-        self.update_leds()
-
-        # Augmentation ou baisse de l'intensité
-        if self.phase in phase_it_up:
-            self.it += 1
-
-        if self.phase in phase_it_down:
-            self.it -= 1
-
-        # Transition de phase
-        if self.it == 100 or self.it == self.intensity_min:
-            self.sequence = 0
-            if self.phase == 0:
-                self.phase = 1
-            else:
-                self.phase = 0
-        else:
-            self.sequence += 1
-
-        # Gestion du timing des mises à jour
-        time.sleep(1 / (self.argb[self.argb_in_running]["speed"] * 10))
+        mode_pulse(self)
 
     def mode_pulse_two_colors(self):
-
-        color = None
-        phase_it_down = [0, 2]
-        phase_it_up = [1, 3]
-
-        if self.phase in [1, 3]:
-
-            if self.phase == 1:
-                color = self.compute_color("color_2")
-            if self.phase == 3:
-                color = self.compute_color("color_1")
-
-            if self.sequence == 0:
-                self.dif_tr = (max(color[0], self.tr) - min(color[0], self.tr)) / (100 - self.intensity_min)
-                self.dif_tg = (max(color[1], self.tg) - min(color[1], self.tg)) / (100 - self.intensity_min)
-                self.dif_tb = (max(color[2], self.tb) - min(color[2], self.tb)) / (100 - self.intensity_min)
-
-            if color[0] > self.tr:
-                self.tr += self.dif_tr
-            elif color[0] < self.tr:
-                self.tr -= self.dif_tr
-
-            if color[1] > self.tg:
-                self.tg += self.dif_tg
-            elif color[1] < self.tg:
-                self.tg -= self.dif_tg
-
-            if color[2] > self.tb:
-                self.tb += self.dif_tb
-            elif color[2] < self.tb:
-                self.tb -= self.dif_tb
-
-            if self.sequence == self.intensity_min - 1:
-                self.tr = color[0]
-                self.tg = color[1]
-                self.tb = color[2]
-
-        self.update_leds()
-
-        # Augmentation ou baisse de l'intensité
-        if self.phase in phase_it_up:
-            self.it += 1
-
-        if self.phase in phase_it_down:
-            self.it -= 1
-
-        # Transition de phase
-        if self.it == 100 or self.it == self.intensity_min:
-            self.sequence = 0
-            if self.phase < 3:
-                self.phase += 1
-            else:
-                self.phase = 0
-        else:
-            self.sequence += 1
-
-        # Gestion du timing des transitions
-        time.sleep(1 / (self.argb[self.argb_in_running]["speed"] * 10))
-
+        mode_pulse_two_colors(self)
 
     def mode_pulse_three_colors(self):
-
-        color = None
-        phase_it_down = [0, 2, 4]
-        phase_it_up = [1, 3, 5]
-
-        if self.phase in [1, 3, 5]:
-
-            if self.phase == 1:
-                color = self.compute_color("color_2")
-            if self.phase == 3:
-                color = self.compute_color("color_3")
-            if self.phase == 5:
-                color = self.compute_color("color_1")
-
-            if self.sequence == 0:
-                self.dif_tr = (max(color[0], self.tr) - min(color[0], self.tr)) / (100 - self.intensity_min)
-                self.dif_tg = (max(color[1], self.tg) - min(color[1], self.tg)) / (100 - self.intensity_min)
-                self.dif_tb = (max(color[2], self.tb) - min(color[2], self.tb)) / (100 - self.intensity_min)
-
-            if color[0] > self.tr:
-                self.tr += self.dif_tr
-            elif color[0] < self.tr:
-                self.tr -= self.dif_tr
-
-            if color[1] > self.tg:
-                self.tg += self.dif_tg
-            elif color[1] < self.tg:
-                self.tg -= self.dif_tg
-
-            if color[2] > self.tb:
-                self.tb += self.dif_tb
-            elif color[2] < self.tb:
-                self.tb -= self.dif_tb
-
-            if self.sequence == self.intensity_min - 1:
-                self.tr = color[0]
-                self.tg = color[1]
-                self.tb = color[2]
-
-        self.update_leds()
-
-        # Augmentation ou baisse de l'intensité
-        if self.phase in phase_it_up:
-            self.it += 1
-
-        if self.phase in phase_it_down:
-            self.it -= 1
-
-        # Transition de phase
-        if self.it == 100 or self.it == self.intensity_min:
-            self.sequence = 0
-            if self.phase < 5:
-                self.phase += 1
-            else:
-                self.phase = 0
-        else:
-            self.sequence += 1
-
-        # Gestion du timing des transitions
-        time.sleep(1 / (self.argb[self.argb_in_running]["speed"] * 10))
+        mode_pulse_three_colors(self)
 
     def mode_switch_two_colors(self):
-
-        color = None
-
-        if self.phase == 0:
-            color = self.compute_color("color_2")
-        if self.phase == 1:
-            color = self.compute_color("color_1")
-
-        if self.sequence == 0:
-            self.dif_tr = (max(color[0], self.tr) - min(color[0], self.tr)) / ((100 - self.speed) * 10)
-            self.dif_tg = (max(color[1], self.tg) - min(color[1], self.tg)) / ((100 - self.speed) * 10)
-            self.dif_tb = (max(color[2], self.tb) - min(color[2], self.tb)) / ((100 - self.speed) * 10)
-
-        if color[0] > self.tr:
-            self.tr += self.dif_tr
-        elif color[0] < self.tr:
-            self.tr -= self.dif_tr
-
-        if color[1] > self.tg:
-            self.tg += self.dif_tg
-        elif color[1] < self.tg:
-            self.tg -= self.dif_tg
-
-        if color[2] > self.tb:
-            self.tb += self.dif_tb
-        elif color[2] < self.tb:
-            self.tb -= self.dif_tb
-
-        if self.sequence == ((100 - self.speed) * 10):
-            self.tr = color[0]
-            self.tg = color[1]
-            self.tb = color[2]
-
-        self.update_leds()
-
-        # Transition de phase
-        if self.sequence == ((100 - self.speed) * 10):
-            self.sequence = 0
-            if self.phase == 0:
-                self.phase = 1
-            else:
-                self.phase = 0
-
-        else:
-            self.sequence += 1
-
-        # Gestion du timing des transitions
-        time.sleep(1 / (self.argb[self.argb_in_running]["speed"] * 10))
+        mode_switch_two_colors(self)
 
     def mode_switch_three_colors(self):
-
-        color = None
-
-        if self.phase == 0:
-            color = self.compute_color("color_2")
-        if self.phase == 1:
-            color = self.compute_color("color_3")
-        if self.phase == 2:
-            color = self.compute_color("color_1")
-
-        if self.sequence == 0:
-            self.dif_tr = (max(color[0], self.tr) - min(color[0], self.tr)) / ((100 - self.speed) * 10)
-            self.dif_tg = (max(color[1], self.tg) - min(color[1], self.tg)) / ((100 - self.speed) * 10)
-            self.dif_tb = (max(color[2], self.tb) - min(color[2], self.tb)) / ((100 - self.speed) * 10)
-
-        if color[0] > self.tr:
-            self.tr += self.dif_tr
-        elif color[0] < self.tr:
-            self.tr -= self.dif_tr
-
-        if color[1] > self.tg:
-            self.tg += self.dif_tg
-        elif color[1] < self.tg:
-            self.tg -= self.dif_tg
-
-        if color[2] > self.tb:
-            self.tb += self.dif_tb
-        elif color[2] < self.tb:
-            self.tb -= self.dif_tb
-
-        if self.sequence == ((100 - self.speed) * 10):
-            self.tr = color[0]
-            self.tg = color[1]
-            self.tb = color[2]
-
-        self.update_leds()
-
-        # Transition de phase
-        if self.sequence == ((100 - self.speed) * 10):
-            self.sequence = 0
-            if self.phase < 2:
-                self.phase += 1
-            else:
-                self.phase = 0
-
-        else:
-            self.sequence += 1
-
-        # Gestion du timing des transitions
-        time.sleep(1 / (self.argb[self.argb_in_running]["speed"] * 10))
+        mode_switch_three_colors(self)
 
 
 def argb_run(pipe):

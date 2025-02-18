@@ -1,0 +1,32 @@
+{
+  "sensors":[
+    "sensor_1_value",
+    "sensor_2_value",
+    "sensor_3_value"
+  ],
+  "tach":[
+    "gpio_tach_soc",
+    "gpio_tach_cpu",
+    "gpio_tach_gpu",
+    "gpio_tach_case",
+    "gpio_tach_pump_1",
+    "gpio_tach_pump_2"
+  ],
+  "pca":[
+    "gpio_pca_soc",
+    "gpio_pca_cpu",
+    "gpio_pca_gpu",
+    "gpio_pca_case",
+    "gpio_pca_pump_1",
+    "gpio_pca_pump_2"
+  ],
+  "argb":[
+    "argb_a_mode",
+    "argb_b_mode",
+    "argb_c_mode",
+    "argb_d_mode",
+    "argb_e_mode",
+    "argb_f_mode",
+    "argb_standby_mode"
+  ]
+}

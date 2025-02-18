@@ -1,0 +1,157 @@
+{
+  "argb": {
+    "number": 18,
+    "a": {
+      "mode": "fixe",
+      "color_1": "#6e6ef0",
+      "color_2": "#6ef06e",
+      "color_3": "#fcba03",
+      "intensity_min": 40,
+      "speed": 10
+    },
+    "b": {
+      "mode": "pulse",
+      "color_1": "#6e6ef0",
+      "color_2": "#6ef06e",
+      "color_3": "#fcba03",
+      "intensity_min": 40,
+      "speed": 10
+    },
+    "c": {
+      "mode": "pulse_two_colors",
+      "color_1": "#6e6ef0",
+      "color_2": "#6ef06e",
+      "color_3": "#fcba03",
+      "intensity_min": 40,
+      "speed": 10
+    },
+    "d": {
+      "mode": "pulse_three_colors",
+      "color_1": "#6e6ef0",
+      "color_2": "#6ef06e",
+      "color_3": "#fcba03",
+      "intensity_min": 40,
+      "speed": 10
+    },
+    "e": {
+      "mode": "switch_two_colors",
+      "color_1": "#6e6ef0",
+      "color_2": "#6ef06e",
+      "color_3": "#fcba03",
+      "intensity_min": 40,
+      "speed": 10
+    },
+    "f": {
+      "mode": "switch_three_colors",
+      "color_1": "#6e6ef0",
+      "color_2": "#6ef06e",
+      "color_3": "#fcba03",
+      "intensity_min": 40,
+      "speed": 10
+    },
+    "standby": {
+      "mode": "off",
+      "color_1": "#6e6ef0",
+      "color_2": "#6ef06e",
+      "color_3": "#fcba03",
+      "intensity_min": 40,
+      "speed": 10
+    }
+  },
+  "cooling": {
+    "soc": {
+        "pwm_min": 40,
+        "pwm_max": 100,
+        "temp_base": 20,
+        "temp_max": 40
+    },
+    "silent": {
+      "cpu": {
+        "pwm_min": 30,
+        "pwm_max": 60,
+        "temp_base": 20,
+        "temp_max": 35
+      },
+      "gpu": {
+        "pwm_min": 30,
+        "pwm_max": 60,
+        "temp_base": 20,
+        "temp_max": 35
+      },
+      "case": {
+        "pwm_min": 30,
+        "pwm_max": 60,
+        "temp_base": 20,
+        "temp_max": 35
+      },
+      "pump_1": {
+        "pwm": 80
+      },
+      "pump_2": {
+        "pwm": 80
+      }
+    },
+    "performance": {
+      "cpu": {
+        "pwm_min": 60,
+        "pwm_max": 90,
+        "temp_base": 20,
+        "temp_max": 30
+      },
+      "gpu": {
+        "pwm_min": 60,
+        "pwm_max": 90,
+        "temp_base": 20,
+        "temp_max": 30
+      },
+      "case": {
+        "pwm_min": 60,
+        "pwm_max": 90,
+        "temp_base": 20,
+        "temp_max": 30
+      },
+      "pump_1": {
+        "pwm": 100
+      },
+      "pump_2": {
+        "pwm": 100
+      }
+    }
+  },
+  "gpio": {
+    "sensor_1": "Sensor N/A",
+    "sensor_2": "Sensor N/A",
+    "sensor_3": "Sensor N/A",
+    "sensors": {
+      "1": "cpu",
+      "2": "gpu",
+      "3": "case"
+    },
+    "pin": {
+      "power": 26,
+      "start": 24,
+      "pwm_lock": 23,
+      "tach": {
+        "soc": 13,
+        "cpu": 27,
+        "gpu": 22,
+        "case": 5,
+        "pump_1": 6,
+        "pump_2": 17
+      },
+      "pca": {
+        "soc": 0,
+        "cpu": 1,
+        "gpu": 2,
+        "case": 3,
+        "pump_1": 4,
+        "pump_2": 5
+      }
+    }
+  },
+  "default": {
+    "theme": "archsystem",
+    "mode": "silent",
+    "argb": "a"
+  }
+}

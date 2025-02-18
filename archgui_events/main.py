@@ -36,7 +36,7 @@ class Events:
                 ih = modules["display"].images["argb"][i]["on"].height
 
                 if ix < x < int(ix + iw) and iy < y < int(iy + ih):
-                    modules["display"].print_argb_active(i)
+                    modules["display"].print_active_argb(i)
                     modules["mpu"].set_var("argb", {"argb_selected": i})
                     is_break = True
                     break
@@ -52,7 +52,7 @@ class Events:
 
                     if ix < x < int(ix + iw) and iy < y < int(iy + ih):
                         modules["mpu"].set_var("listener", {"mode": i})
-                        modules["display"].print_mode_active(i)
+                        modules["display"].print_active_mode(i)
                         break
 
         if event == 'graph_standby button-1':
@@ -61,4 +61,4 @@ class Events:
 
             if 250 < x < 250 + 300 and 90 < y < 90 + 300:
                 modules["mpu"].set_var("listener", {"start": True})
-                modules["display"].print_standby_active()
+                modules["display"].print_active_standby()

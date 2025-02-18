@@ -209,24 +209,24 @@ class Listener(MPUPrcWAC):
             if target == "soc":
                 pwm_min = self.cooling["soc"]["pwm_min"]
                 pwm_max = self.cooling["soc"]["pwm_max"]
-                pmad = self.cooling["soc"]["temp_max"]
+                temp_max = self.cooling["soc"]["temp_max"]
             else:
                 pwm_min = self.cooling[mode][target]["pwm_min"]
                 pwm_max = self.cooling[mode][target]["pwm_max"]
-                pmad = self.cooling[mode][target]["temp_max"]
+                temp_max = self.cooling[mode][target]["temp_max"]
 
             pwm = pwm_min
 
-            if degree_min < value < pmad:
+            if degree_min < value < temp_max:
 
                 pwm_gap = pwm_max - pwm_min
-                degree_gap = pmad - degree_min
+                degree_gap = temp_max - degree_min
                 value_gaped = value - degree_min
                 divider = (degree_gap / value_gaped)
 
                 pwm = pwm_min + (pwm_gap / divider)
 
-            elif pmad <= value:
+            elif temp_max <= value:
 
                 pwm = pwm_max
 

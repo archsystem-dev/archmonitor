@@ -150,34 +150,34 @@ class Events:
 
         # ------------------------------------------------------------------------
 
-        if event in modules["data"].sensors_keys:
+        if event in modules["data"].keys["sensors"]:
             modules["configuration"].change_combo_collection(
-                modules["data"].sensors_keys,
-                modules["data"].sensors_values,
+                modules["data"].keys["keys"],
+                modules["data"].values["sensors"],
                 event
             )
 
         # ------------------------------------------------------------------------
 
-        if event in modules["data"].tach_keys:
+        if event in modules["data"].keys["tach"]:
             modules["configuration"].change_combo_collection(
-                modules["data"].tach_keys,
-                modules["data"].tach_values,
+                modules["data"].keys["tach"],
+                modules["data"].values["tach"],
                 event
             )
 
         # ------------------------------------------------------------------------
 
-        if event in modules["data"].pca_keys:
+        if event in modules["data"].keys["pca"]:
             modules["configuration"].change_combo_collection(
-                modules["data"].pca_keys,
-                modules["data"].pca_values,
+                modules["data"].keys["pca"],
+                modules["data"].values["pca"],
                 event
             )
 
         # ------------------------------------------------------------------------
 
-        if event in modules["data"].argb_keys:
+        if event in modules["data"].keys["argb"]:
             modules["configuration"].change_argb_mode(event)
 
         # ------------------------------------------------------------------------

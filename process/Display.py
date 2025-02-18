@@ -1,50 +1,23 @@
 """
 Display.py
 """
-import json
 import time
 import threading
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageFont
 
-from concurrent.futures import ThreadPoolExecutor
+from process.display.pre_print_argb import pre_print_argb
+from process.display.pre_print_mode import pre_print_mode
+from process.display.pre_print_pwm import pre_print_pwm
+from process.display.pre_print_standby import pre_print_standby
 
+from process.display.print_active_argb import print_active_argb
+from process.display.print_active_mode import print_active_mode
+from process.display.print_active_standby import print_active_standby
 
-# -------------------------------------------------------------------------
-# / Converti une List en Tuple
-# -------------------------------------------------------------------------
-
-def hex_to_rgb(h):
-    """
-    :param h:
-    :return:
-    """
-
-    h = h[1:]
-
-    rgb = []
-    for i in (0, 2, 4):
-        decimal = int(h[i:i + 2], 16)
-        rgb.append(decimal)
-
-    return tuple(rgb)
-
-
-def rgb_to_hex(rgb):
-    """
-    :param rgb:
-    :return:
-    """
-    return '#{:02x}{:02x}{:02x}'.format(rgb[0], rgb[1], rgb[2])
-
-
-def list_to_tuple(ll):
-    """
-    :param ll:
-    :return:
-    """
-    return tuple(list_to_tuple(x) for x in ll) if type(ll) is list else ll
-
+from process.display.print_degree import print_degree
+from process.display.print_pwm import print_pwm
+from process.display.print_rpm import print_rpm
 
 class Display:
     """
@@ -113,302 +86,69 @@ class Display:
         """
         self.modules = modules
 
+    def hex_to_rgb(self, h):
+        """
+        :param h:
+        :return:
+        """
+
+        h = h[1:]
+
+        rgb = []
+        for i in (0, 2, 4):
+            decimal = int(h[i:i + 2], 16)
+            rgb.append(decimal)
+
+        return tuple(rgb)
+
+    def list_to_tuple(self, ll):
+        """
+        :param ll:
+        :return:
+        """
+        return tuple(self.list_to_tuple(x) for x in ll) if type(ll) is list else ll
+
     # ----------------------------------------------------------------------------------------
     # Pre Print Standby
     # ----------------------------------------------------------------------------------------
 
-    def pre_print_standby(self):
-        """
-        pre_print_standby(self)
-        """
-
-        self.figures["standby"]["on"] = self.modules["archgui"].graph_draw_image(
-            uniqid=self.window,
-            graph=self.graph_standby,
-            location=(10, 10),
-            image=self.images["standby"]["on"])
-
-        self.figures["standby"]["off"] = self.modules["archgui"].graph_draw_image(
-            uniqid=self.window,
-            graph=self.graph_standby,
-            location=(10, 10),
-            image=self.images["standby"]["off"])
-
-        self.modules["archgui"].graph_send_figure_to_back(
-            uniqid=self.window,
-            graph=self.graph_standby,
-            figure=self.figures["standby"]["on"])
-
-    # ----------------------------------------------------------------------------------------
-    # Pre Print argb
-    # ----------------------------------------------------------------------------------------
-
     def pre_print_argb(self):
-        """
         pre_print_argb(self)
-        """
-
-        for argb in ["a", "b", "c", "d", "e", "f"]:
-            self.figures["argb"][argb] = {
-                "on": None,
-                "off": None
-            }
-
-            self.figures["argb"][argb]["on"] = self.modules["archgui"].graph_draw_image(
-                uniqid=self.window,
-                graph=self.graph_monitor,
-                location=(self.theme["argb"][argb]["x"], self.theme["argb"][argb]["y"]),
-                image=self.images["argb"][argb]["on"])
-
-            self.figures["argb"][argb]["off"] = self.modules["archgui"].graph_draw_image(
-                uniqid=self.window,
-                graph=self.graph_monitor,
-                location=(self.theme["argb"][argb]["x"], self.theme["argb"][argb]["y"]),
-                image=self.images["argb"][argb]["off"])
-
-            self.modules["archgui"].graph_send_figure_to_back(
-                uniqid=self.window,
-                graph=self.graph_monitor,
-                figure=self.figures["argb"][argb]["on"])
-
-    # ----------------------------------------------------------------------------------------
-    # Pre Print Mode
-    # ----------------------------------------------------------------------------------------
 
     def pre_print_mode(self):
-        """
         pre_print_mode(self)
-        """
-
-        for mode in ["silent", "performance"]:
-
-            self.figures["mode"][mode] = {
-                "on": None,
-                "off": None
-            }
-
-            self.figures["mode"][mode]["on"] = self.modules["archgui"].graph_draw_image(
-                uniqid=self.window,
-                graph=self.graph_monitor,
-                location=(self.theme["mode"][mode]["x"], self.theme["mode"][mode]["y"]),
-                image=self.images["mode"][mode]["on"])
-
-            self.figures["mode"][mode]["off"] = self.modules["archgui"].graph_draw_image(
-                uniqid=self.window,
-                graph=self.graph_monitor,
-                location=(self.theme["mode"][mode]["x"], self.theme["mode"][mode]["y"]),
-                image=self.images["mode"][mode]["off"])
-
-    # ----------------------------------------------------------------------------------------
-    # Pre Print pwm_step
-    # ----------------------------------------------------------------------------------------
 
     def pre_print_pwm(self, target):
-        """
         pre_print_pwm(self, target)
-        """
 
-        self.figures["pwm"][target] = {
-            "off": [],
-            "on": []}
-
-        for i in range(self.theme["global"]["pwm_steps"]):
-
-            x = self.theme["pwm"][target]["x"]
-            for j in range(i):
-                x += self.images["pwm_step"]["off"][j].width
-
-            self.figures["pwm"][target]["off"].append(self.modules["archgui"].graph_draw_image(
-                uniqid=self.window,
-                graph=self.graph_monitor,
-                location=(x, self.theme["pwm"][target]["y"]),
-                image=self.images["pwm_step"]["off"][i]))
+    def pre_print_standby(self):
+        pre_print_standby(self)
 
     # ----------------------------------------------------------------------------------------
-    # Print standby
+    # Print Active
     # ----------------------------------------------------------------------------------------
 
-    def print_standby_active(self):
-        """
-        print_standby_active(self)
-        """
+    def print_active_argb(self, argb):
+        print_active_argb(self, argb)
 
-        self.modules["archgui"].graph_send_figure_to_back(
-            uniqid=self.window,
-            graph=self.graph_standby,
-            figure=self.figures["standby"]["off"])
+    def print_active_mode(self, mode):
+        print_active_mode(self, mode)
 
-        self.modules["archgui"].graph_bring_figure_to_front(
-            uniqid=self.window,
-            graph=self.graph_monitor,
-            figure=self.figures["standby"]["on"])
-
-    # ----------------------------------------------------------------------------------------
-    # Print argb
-    # ----------------------------------------------------------------------------------------
-
-    def print_argb_active(self, argb):
-        """
-        print_argb_active(self, argb)
-        """
-
-        figs = {
-            "back": [],
-            "front": []
-        }
-
-        for i in ["a", "b", "c", "d", "e", "f"]:
-            if i == argb:
-                figs["back"].append(self.figures["argb"][i]["off"])
-                figs["front"].append(self.figures["argb"][i]["on"])
-            else:
-                figs["front"].append(self.figures["argb"][i]["off"])
-                figs["back"].append(self.figures["argb"][i]["on"])
-
-        for fig in figs["back"]:
-            self.modules["archgui"].graph_send_figure_to_back(
-                uniqid=self.window,
-                graph=self.graph_monitor,
-                figure=fig)
-
-        for fig in figs["front"]:
-            self.modules["archgui"].graph_bring_figure_to_front(
-                uniqid=self.window,
-                graph=self.graph_monitor,
-                figure=fig)
-
-    # ----------------------------------------------------------------------------------------
-    # Print Mode
-    # ----------------------------------------------------------------------------------------
-
-    def print_mode_active(self, mode):
-        """
-        print_mode_active()
-        """
-
-        figs = {
-            "back": [],
-            "front": []
-        }
-
-        for i in ["silent", "performance"]:
-            if i == mode:
-                figs["back"].append(self.figures["mode"][i]["off"])
-                figs["front"].append(self.figures["mode"][i]["on"])
-            else:
-                figs["front"].append(self.figures["mode"][i]["off"])
-                figs["back"].append(self.figures["mode"][i]["on"])
-
-        for fig in figs["back"]:
-            self.modules["archgui"].graph_send_figure_to_back(
-                uniqid=self.window,
-                graph=self.graph_monitor,
-                figure=fig)
-
-        for fig in figs["front"]:
-            self.modules["archgui"].graph_bring_figure_to_front(
-                uniqid=self.window,
-                graph=self.graph_monitor,
-                figure=fig)
+    def print_active_standby(self):
+        print_active_standby(self)
 
     # ----------------------------------------------------------------------------------------
     # Print TXT
     # ----------------------------------------------------------------------------------------
 
+    def print_degree(self, target, degree):
+        print_degree(self, target, degree)
+
     def print_pwm(self, target, value):
-        """
-        :param target:
-        :param value:
-        """
-
-        x = self.theme["pwm"][target]["x"]
-        for j in range(len(self.figures["pwm"][target]["on"])):
-            x += self.images["pwm_step"]["off"][j].width
-
-        if len(self.figures["pwm"][target]["on"]) < value:
-            self.figures["pwm"][target]["on"].append(self.modules["archgui"].graph_draw_image(
-                uniqid=self.window,
-                graph=self.graph_monitor,
-                location=(x, self.theme["pwm"][target]["y"]),
-                image=self.images["pwm_step"]["on"][len(self.figures["pwm"][target]["on"])]))
-
-        if len(self.figures["pwm"][target]["on"]) > value:
-            self.modules["archgui"].graph_delete_figure(
-                uniqid=self.window,
-                graph=self.graph_monitor,
-                figure=self.figures["pwm"][target]["on"][-1])
-            self.figures["pwm"][target]["on"].pop()
-
-        self.pwm[target] = len(self.figures["pwm"][target]["on"])
+        print_pwm(self, target, value)
 
     def print_rpm(self, target, rpm):
-        """
-        :param target:
-        :param rpm:
-        """
-
-        canvas = Image.new(
-            "RGBA",
-            (self.theme["rpm"][target]["w"], self.theme["rpm"][target]["h"]),
-            color=hex_to_rgb(self.theme["rpm"][target]["bgc"]))
-
-        image = ImageDraw.Draw(canvas)
-        image.text(
-            (0, 0),
-            str(rpm),
-            font=self.font["rpm"][target],
-            text_color=hex_to_rgb(self.theme["rpm"][target]["c"])
-        )
-
-        self.figures["rpm"][target].append(self.modules["archgui"].graph_draw_image(
-            uniqid=self.window,
-            graph=self.graph_monitor,
-            location=(self.theme["rpm"][target]["x"], self.theme["rpm"][target]["y"]),
-            image=canvas))
-
-        if self.figures["rpm"][target][0] != "startup":
-            self.modules["archgui"].graph_delete_figure(
-                uniqid=self.window,
-                graph=self.graph_monitor,
-                figure=self.figures["rpm"][target][0])
-
-        del self.figures["rpm"][target][0]
-
-    def print_degree(self, target, degree):
-        """
-        :param target:
-        :param degree:
-        """
-
-        if target != "soc":
-            target = self.gpio["sensors"][target.replace("sensor_", "")]
-
-        canvas = Image.new(
-            "RGBA",
-            (self.theme["temp"][target]["w"], self.theme["temp"][target]["h"]),
-            color=list_to_tuple(self.theme["temp"][target]["bgc"]))
-
-        image = ImageDraw.Draw(canvas)
-        image.text(
-            (0, 0),
-            str(degree),
-            font=self.font["temp"][target],
-            text_color=hex_to_rgb(self.theme["temp"][target]["c"])
-        )
-
-        self.figures["temp"][target].append(self.modules["archgui"].graph_draw_image(
-            uniqid=self.window,
-            graph=self.graph_monitor,
-            location=(self.theme["temp"][target]["x"], self.theme["temp"][target]["y"]),
-            image=canvas))
-
-        if self.figures["temp"][target][0] != "startup":
-            self.modules["archgui"].graph_delete_figure(
-                uniqid=self.window,
-                graph=self.graph_monitor,
-                figure=self.figures["temp"][target][0])
-
-        del self.figures["temp"][target][0]
+        print_rpm(self, target, rpm)
 
     # ----------------------------------------------------------------------------------------
     # Generate
@@ -419,7 +159,7 @@ class Display:
         generate()
         """
 
-        self.window = self.modules["archgui"].open(model="main", title="Archmonitor", force_toplevel=True)
+        self.window = self.modules["archgui"].activate(model="main", title="Archmonitor")
         self.modules["archgui"].define_main(self.window)
 
         self.figures = {}
@@ -494,12 +234,12 @@ class Display:
             location=(10, 10),
             image=self.images["background"])}
 
-        with ThreadPoolExecutor() as executor:
-            executor.submit(self.pre_print_argb())
-            executor.submit(self.pre_print_mode())
-            executor.submit(self.pre_print_standby())
-            for target in self.pwm:
-                executor.submit(self.pre_print_pwm(target))
+        self.pre_print_argb()
+        self.pre_print_mode()
+        self.pre_print_standby()
+
+        for target in self.pwm:
+            self.pre_print_pwm(target)
 
     # ----------------------------------------------------------------------------------------
     # Reveal
@@ -512,6 +252,8 @@ class Display:
 
         startup_count = 0
         display_pre_active = True
+
+        time.sleep(2)
 
         while True:
 
@@ -558,7 +300,7 @@ class Display:
                 mode = self.modules["mpu"].get_result("listener", "mode")
 
                 if mode != self.mode:
-                    self.print_mode_active(mode)
+                    self.print_active_mode(mode)
                     self.mode = mode
 
                 # --------------------------------
@@ -566,7 +308,7 @@ class Display:
                 argb = self.modules["mpu"].get_result("listener", "argb")
 
                 if argb != self.argb:
-                    self.print_argb_active(argb)
+                    self.print_active_argb(argb)
                     self.argb = argb
 
                 # --------------------------------
@@ -652,8 +394,8 @@ class Display:
 
 
                 if display_pre_active:
-                    self.print_argb_active(self.default["argb"])
-                    self.print_mode_active(self.default["mode"])
+                    self.print_active_argb(self.default["argb"])
+                    self.print_active_mode(self.default["mode"])
                     display_pre_active = False
 
             time.sleep(0.1)

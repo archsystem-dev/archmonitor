@@ -2,7 +2,6 @@
 Temperature.py
 """
 
-import json
 import time
 import signal
 
