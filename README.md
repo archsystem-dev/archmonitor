@@ -68,7 +68,7 @@ Une fois l’ordinateur allumé, le Raspberry PI contrôle les signaux PWM des d
 ## 🛠️ Lien externe :
 
 - [`Raspberry Pi OS`](https://www.raspberrypi.com/software/)
-- [`Tci`](https://www.raspberrypi.com/software/)
+- [`Tci`](https://www.lelectronique.com/logiciel/tci-7.html)
 
 <br/>
 
@@ -163,13 +163,13 @@ am-sensors
 
 ## 💻️ Configuration :
 
-### Premièrement lancez le programme de détection des sondes :  
+### 1 : Lancez le programme de détection des sondes :  
 
 ```bash
 am-sensors
 ```
 
-### Deuxiemement lancez le programme de configuration :
+### 2 : Lancez le programme de configuration :
 
 ```bash
 am-config
@@ -182,13 +182,13 @@ am-config
 - Configurer les ports du GPIO si le câblage différent
 
 
-### Troisièmement, lancez le programme en mode test :
+### 3 : Lancez le programme en mode test :
 
 ```bash
 am-start-test
 ```
 
-### Quatrièmement, activez et redémarrez:
+### 4: Activez et redémarrez:
 
 ```bash
 am-enabled
