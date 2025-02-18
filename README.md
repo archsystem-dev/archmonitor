@@ -53,7 +53,7 @@ Il faut veiller à ce que les ports USB reste alimenté après l’arrêt de l�
 cela si ce n’est pas d’usine.<br/>
 
 Le ventilateur du module est alimenté et contrôlé par le PCA9685 lui-même alimenté par l’`USB3.2 GEN2` d'alimentation.
-Attention, le ventilateur utilisé est un 12v, j'utilise un booster de tension ç amener les 5v à 12v.
+Attention, le ventilateur utilisé est un 12v, j'utilise un booster de tension pour amener les 5v à 12v.
 
 Les pompes et les groupes de ventilateurs sont alimenté via le 12V du SATA Power.
 
