@@ -74,12 +74,12 @@ sudo pip install --break-system-packages FreeSimpleGUI pynput screeninfo gpiozer
 sudo pip install --break-system-packages adafruit-circuitpython-pca9685
 
 
-REPO_ARCHGUI_URL="https://github.com/archprojectdev/archgui"
+REPO_ARCHGUI_URL="https://github.com/archsystem-dev/archgui"
 
 echo "Clonage du dépôt '$REPO_ARCHGUI_URL' dans le dossier courant..."
 git clone "$REPO_ARCHGUI_URL" "archgui"
 
-REPO_MPU_URL="https://github.com/archprojectdev/mpunified"
+REPO_MPU_URL="https://github.com/archsystem-dev/mpunified"
 
 echo "Clonage du dépôt '$REPO_MPU_URL' dans le dossier courant..."
 git clone "$REPO_MPU_URL" "mpunified"
