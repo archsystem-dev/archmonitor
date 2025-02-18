@@ -17,21 +17,10 @@ echo "Le comportement du démarrage a été mis à jour."
 
 # 2. Commenter la ligne contenant 'bash startx.sh' dans le fichier .bashrc de l'utilisateur courant
 BASHRC_FILE="$USER_HOME/.bashrc"
+LINE='^[[:space:]]*if \[\[ "\$(tty)" == "\/dev\/tty1" \]\]; then bash startx.sh; fi$'
 
-# Vérifier si le bloc existe avant de le commenter
-if grep -qE '^\s*if \[\[ "\$\(\tty\)" == "/dev/tty1" \]\]; then' "$BASHRC_FILE" && \
-   grep -qE '^\s*bash startx.sh' "$BASHRC_FILE" && \
-   grep -qE '^\s*fi' "$BASHRC_FILE"; then
-
-    # Ajouter un `#` au début des lignes correspondantes
-    sed -i 's|^\(\s*if \[\[ "$(tty)" == "/dev/tty1" \]\]; then\)|# \1|' "$BASHRC_FILE"
-    sed -i 's|^\(\s*bash startx.sh\)|# \1|' "$BASHRC_FILE"
-    sed -i 's|^\(\s*fi\)|# \1|' "$BASHRC_FILE"
-
-    echo "[INFO] Bloc 'startx.sh' commenté avec succès dans $BASHRC_FILE."
-else
-    echo "[WARN] Bloc 'startx.sh' introuvable dans $BASHRC_FILE."
-fi
+# On ajoute "# " au début de la ligne qui correspond au pattern.
+sed -i.bak "/$LINE/ s/^[[:space:]]*/# /" "$BASHRC_FILE"
 
 # 3. Renommage du fichier de configuration Xorg
 MONITOR_CONFIG="/etc/X11/xorg.conf.d/10-monitor.conf"

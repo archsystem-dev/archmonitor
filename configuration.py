@@ -20,10 +20,11 @@ if __name__ == "__main__":
 
     script_dir = os.path.dirname(os.path.realpath(__file__))
 
-    from process.Data import Data
-    data = Data(script_dir=script_dir, testing=testing)
-
     # -------------------------------------------------------------------------
+
+    from process.Data import Data
+
+    data = Data(script_dir=script_dir, testing=testing)
 
     import archgui
     import mpunified
@@ -31,6 +32,8 @@ if __name__ == "__main__":
     from process.Configuration import Configuration
     from process.Preview import Preview
     from process.Temperature import temperature_run
+
+    # -------------------------------------------------------------------------
 
     configuration = Configuration(testing=testing)
     preview = Preview(testing=testing)
@@ -41,8 +44,6 @@ if __name__ == "__main__":
     mpu.load("temperature", temperature_run)
     mpu.set_var("temperature", {"testing": testing, "gpio": data.gpio})
     mpu.run("temperature")
-
-    # -------------------------------------------------------------------------
 
     modules = {
         "mpu": mpu,
@@ -62,17 +63,11 @@ if __name__ == "__main__":
     # -------------------------------------------------------------------------
 
     def signal_handler(_, __):
-        """
-        :param _:
-        :param __:
-        """
         for module in modules:
             modules[module].stop()
         sys.exit(0)
 
     signal.signal(signal.SIGINT, signal_handler)
-
-    # -------------------------------------------------------------------------
 
     configuration.run()
     archgui.run()

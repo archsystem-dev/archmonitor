@@ -17,21 +17,10 @@ echo "Le comportement du démarrage a été rétabli."
 
 # 2. Décommenter la ligne contenant 'bash startx.sh' dans le fichier .bashrc de l'utilisateur courant
 BASHRC_FILE="$USER_HOME/.bashrc"
+LINE='^[[:space:]]*# [[:space:]]*if \[\[ "\$(tty)" == "\/dev\/tty1" \]\]; then bash startx.sh; fi$'
 
-# Vérifier si le bloc commenté existe avant de le décommenter
-if grep -qE '^\s*#\s*if \[\[ "\$\(\tty\)" == "/dev/tty1" \]\]; then' "$BASHRC_FILE" && \
-   grep -qE '^\s*#\s*bash startx.sh' "$BASHRC_FILE" && \
-   grep -qE '^\s*#\s*fi' "$BASHRC_FILE"; then
-
-    # Décommenter chaque ligne correspondante
-    sed -i 's|^\s*#\s*\(if \[\[ "$(tty)" == "/dev/tty1" \]\]; then\)|\1|' "$BASHRC_FILE"
-    sed -i 's|^\s*#\s*\(bash startx.sh\)|\1|' "$BASHRC_FILE"
-    sed -i 's|^\s*#\s*\(fi\)|\1|' "$BASHRC_FILE"
-
-    echo "[INFO] Bloc 'startx.sh' décommenté avec succès dans $BASHRC_FILE."
-else
-    echo "[WARN] Bloc commenté 'startx.sh' introuvable dans $BASHRC_FILE."
-fi
+# On retire le préfixe "# " (ainsi que les éventuels espaces) du début de la ligne.
+sed -i.bak "/$LINE/ s/^[[:space:]]*# [[:space:]]*//" "$BASHRC_FILE"
 
 # 3. Restaurer le fichier de configuration Xorg
 MONITOR_CONFIG="/etc/X11/xorg.conf.d/10-monitor.conf"

@@ -73,6 +73,18 @@ apt-get autoremove
 sudo pip install --break-system-packages FreeSimpleGUI pynput screeninfo gpiozero
 sudo pip install --break-system-packages adafruit-circuitpython-pca9685
 
+
+REPO_ARCHGUI_URL="https://github.com/archprojectdev/archgui"
+
+echo "Clonage du dépôt '$REPO_ARCHGUI_URL' dans le dossier courant..."
+git clone "$REPO_ARCHGUI_URL" "archgui"
+
+REPO_MPU_URL="https://github.com/archprojectdev/mpunified"
+
+echo "Clonage du dépôt '$REPO_MPU_URL' dans le dossier courant..."
+git clone "$REPO_MPU_URL" "mpunified"
+
+
 # Création des fichiers de configuration X11
 echo "[INFO] Configuration des fichiers X11..."
 mkdir -p /etc/X11/xorg.conf.d/
@@ -121,13 +133,11 @@ done
 echo "[INFO] Vérification et ajout de startx.sh à .bashrc si nécessaire..."
 
 # Définition du bloc à ajouter
-BLOCK='if [[ "$(tty)" == "/dev/tty1" ]]; then
-    bash startx.sh
-fi'
+LINE='if [[ "$(tty)" == "/dev/tty1" ]]; then bash startx.sh; fi'
 
 # Vérifier si le bloc est déjà présent dans .bashrc
-if ! awk '/if \[\[ "\$\(tty\)" == "\/dev\/tty1" \]\]; then/,/fi/' "$BASHRC_FILE" | grep -q "bash startx.sh"; then
-    echo -e "\n$BLOCK" >> "$BASHRC_FILE"
+if grep -Fqx "$LINE" "$BASHRC_FILE"; then
+    echo -e "\n\n$LINE\n\n" >> "$BASHRC_FILE"
     echo "[INFO] Ajout de startx.sh dans .bashrc terminé."
 else
     echo "[OK] Lancement de startx.sh déjà configuré dans .bashrc."

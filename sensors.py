@@ -11,20 +11,13 @@ if __name__ == "__main__":
         if "-t" in argv:
             testing = True
 
-    # -------------------------------------------------------------------------
-
     script_dir = os.path.dirname(os.path.realpath(__file__))
     from process.Data import Data
     data = Data(script_dir=script_dir, testing=testing, sensors_detection=True)
 
-    # -------------------------------------------------------------------------
-    
     dir_sensor = "/sys/bus/w1/devices/"
 
-    # -------------------------------------------------------------------------
-
     if os.path.isdir(dir_sensor):
-
         raw = glob.glob(dir_sensor + "28*/w1_slave")
 
         for i in range(3):
@@ -39,7 +32,7 @@ if __name__ == "__main__":
             print("Sonde de température manquante.")
         else:
             data.save_data()
-            print("Les sondes ont été ajoutée au fichier de configuration.")
+            print("Les sondes ont été ajoutées au fichier de configuration.")
 
     else:
         for i in range(3):
